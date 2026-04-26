@@ -68,9 +68,26 @@ body {
 }
 
 .hud-display {
-  position: absolute;
+  position: fixed; /* Ensures it stays pinned even as scenes scroll */
   top: 20px;
   right: 20px;
-  background: rgba(0,0,0,0.8);
-  padding: 10px;
+  
+  /* Size Reduction */
+  padding: 8px 12px;
+  min-width: 120px;
+  font-size: 0.7rem; /* Smaller text for a compact 8-bit look */
+  
+  /* Layering Logic */
+  z-index: 9999; /* Forces it in front of all other scene layers */
+  
+  /* Visual Polish */
+  background: rgba(10, 10, 10, 0.9);
+  border: 2px solid #ffffff;
+  box-shadow: 4px 4px 0px var(--accent-pink);
+  pointer-events: none; /* Prevents the box from blocking clicks on scenes */
+}
+
+.hud-display h3 {
+  margin: 4px 0 0 0;
+  color: var(--accent-yellow);
 }
