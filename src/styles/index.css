@@ -31,3 +31,46 @@ body {
   transform: translate(-4px, -4px);
   box-shadow: 12px 12px 0px var(--accent-yellow);
 }
+
+.scrolly-container {
+  position: relative;
+  /* High height allows for the "Step" triggers */
+  height: 500vh; 
+}
+
+.sticky-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.content-steps {
+  position: relative;
+  z-index: 2;
+  margin-top: -100vh; /* Pulls content over the sticky background */
+}
+
+.step-wrapper {
+  height: 125vh; /* Spacing between story beats */
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  pointer-events: none; /* Allows scrolling through layers */
+}
+
+.step-wrapper > * {
+  pointer-events: auto; /* Re-enables interaction for buttons/cards */
+}
+
+.hud-display {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.8);
+  padding: 10px;
+}
