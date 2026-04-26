@@ -5,12 +5,14 @@
 **Prompts Used (In Order):**
 *(These prompts are a faithful summary of how I directed the AI to help me build the deployment pipeline.)*
 
-1.  **AI:** "Here is my initial file structure of my GitHub. I am using TypeScript, Node.js, and JSX. Any suggestions to add/change/remove?"
+1.  **AI:** "Here is my initial file structure for my GitHub. I am using TypeScript, Node.js, and JSX. Any suggestions to add/change/remove?"
     * *Goal: Initial configuration and environment setup.*
-2.  **AI:** Let's work on the necessary steps to deploying the live site."
+2.  **AI:** "Let's focus on the necessary steps to deploying the live site. Remember the tools stated that will be used to build this site!"
     * *Goal: Identify the infrastructure needed for a TSX build.*
-3.  **AI:** "Work on creating a guideline to instruct the AI on the layout of the website based on these goals and task.... [Detailed Goal, Structure, Design, and Audience/Tone provided]"
-    * *Goal: Generate AGENTS.md for AI to follow in future uses*
+3.  **AI:** "Currently receiving issues on GitHub, preventing site deployment. Can you identified the errors on the image provided and provide a resolution? [Image showing 'Missing script: build']"
+    * *Goal: Troubleshooting the bridge between the GitHub Action and the package.json.*
+4.  **AI:** "Another issue I encounter in GitHub. Elaborate details regarding this problem and just like last time, help me resolve this. [Image showing 'Permission denied to github-actions[bot]. Error 403']"
+    * *Goal: Final bug fix regarding security permissions on GitHub.*
 
 ### 2. Exit Checks: Pass and Fail
 
@@ -18,11 +20,11 @@
 
 | Exit Check | Goal Description | Status (Pass/Fail) | Resolution (if failed) |
 | :--- | :--- | :--- | :--- |
-| **Check 1** | Successfully create `.gitignore` to exclude `node_modules`. | **Pass** | N/A |
-| **Check 2** | Configure `vite.config.ts` with correct repository `base` path. | **Pass** | N/A |
-| **Check 3** | Define Brand Archetypes to guide the visual and tonal direction. | **Pass** | N/A - Selected **The Creator** and **The Magician**. |
-| **Check 4** | Integrate Cialdini’s Principles into the user experience design. | **Pass** | N/A - Selected **Unity** (Peer identity) and **Liking** (Relatability). |
-| **Check 5** | Establish strict content constraints for scrollytelling readability. | **Pass** | N/A - Set a **100-200 word limit** per scene to ensure engagement. |
+| **Check A** | Successfully create `.gitignore` to exclude `node_modules`. | **Pass** | N/A |
+| **Check B** | Run `npm run build` locally without errors. | **Pass** | N/A |
+| **Check C** | Push to `main` branch, triggering GitHub Action. | **Pass** | N/A |
+| **Check D** | Action successfully **installs** and **builds** on virtual runner. | **Fail** | *Issue:* The `package.json` default script was "test", not "build". *Fix:* Modified `package.json` to include proper `"build": "tsc && vite build"` scripts. |
+| **Check E** | Action successfully **deploys** artifacts to `gh-pages` branch. | **Fail** | *Issue:* Received an HTTP 403 (Forbidden) error. *Fix:* Updated GitHub repository settings under "Actions > General > Workflow permissions" to "Read and write permissions". |
 
 ### 3. Failure-Mode Reflection
 
