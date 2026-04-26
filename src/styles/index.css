@@ -1,0 +1,33 @@
+:root {
+  /* Bauhaus-inspired 8-bit palette */
+  --bg-primary: #0a0a0a;
+  --text-main: #ffffff;
+  --accent-yellow: #f1c40f;
+  --accent-pink: #ff0055;
+  --border-pixel: 4px solid #ffffff;
+  
+  /* Retro Font Stack */
+  --font-pixel: 'Courier New', Courier, monospace;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-pixel);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Reusable 8-bit Container */
+.pixel-border {
+  border: var(--border-pixel);
+  box-shadow: 8px 8px 0px var(--accent-pink);
+  padding: 1.5rem;
+  background: #1a1a1a;
+  transition: transform 0.2s;
+}
+
+.pixel-border:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px var(--accent-yellow);
+}

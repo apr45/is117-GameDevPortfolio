@@ -32,8 +32,25 @@ const App: React.FC = () => {
       </Scene>
 
       {/* Projects Section - Future Horizontal Scroll */}
-      <Scene id="projects" title="> MISSION_LOG">
-        <p>[Project Showcase Placeholder]</p>
+      <Scene id="projects" title="> PROJECT_LOGS">
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+          gap: '2rem' 
+        }}>
+
+          <div className="pixel-border">
+            <h3 style={{ color: 'var(--accent-yellow)' }}>[ITEM: Physics Engine]</h3>
+            <p>Implemented custom Rigidbody dynamics for character persistence.</p>
+            <span style={{ fontSize: '0.8rem' }}>RARITY: LEGENDARY</span>
+          </div>
+    
+          <div className="pixel-border">
+            <h3 style={{ color: 'var(--accent-pink)' }}>[ITEM: Java Mafia]</h3>
+            <p>Multi-threaded networking architecture for role-based gaming.</p>
+            <span style={{ fontSize: '0.8rem' }}>RARITY: RARE</span>
+          </div>
+        </div>
       </Scene>
 
       {/* CTA Section - Collaboration */}
