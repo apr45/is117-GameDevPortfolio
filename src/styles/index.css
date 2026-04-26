@@ -32,10 +32,35 @@ body {
   box-shadow: 12px 12px 0px var(--accent-yellow);
 }
 
-.scrolly-container {
-  position: relative;
-  /* High height allows for the "Step" triggers */
-  height: 500vh; 
+.scrolly-wrapper {
+  background: #0a0a0a;
+  overflow-x: hidden;
+}
+
+.scene-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky; /* Keeps the scene pinned during the fade/zoom */
+  top: 0;
+  padding: 2rem;
+  will-change: transform, opacity;
+}
+
+/* Optional: Add a subtle 8-bit scanline effect across the whole site */
+.scrolly-wrapper::after {
+  content: " ";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+              linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none;
+  z-index: 10000;
 }
 
 .sticky-stage {

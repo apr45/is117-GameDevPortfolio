@@ -1,49 +1,77 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
 import ProjectSlider from './components/ProjectSlider';
 import CTA from './components/CTA';
 import './styles/index.css';
 
+/**
+ * 1. SceneWrapper: Handles the BSEAI-inspired Zoom & Fade
+ * This component tracks its own scroll progress relative to the viewport.
+ */
+const SceneWrapper = ({ children }: { children: React.ReactNode }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  // Animation logic: Fade and zoom in at 20% scroll, fade and zoom out at 80%
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
+  
+  // Smooth out the scale transition for a premium feel
+  const smoothScale = useSpring(scale, { stiffness: 100, damping: 30 });
+
+  return (
+    <motion.div 
+      ref={ref} 
+      style={{ opacity, scale: smoothScale }} 
+      className="step-wrapper"
+    >
+      {children}
+    </motion.div>
+  );
+};
+
 const App: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   
-  // 1. Logic Architecture: Global scroll tracking
-  const { scrollYProgress } = useScroll({
+  // 2. Global Logic: Tracks total journey progress for the HUD and background
+  const { scrollYProgress: globalScroll } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
   });
 
-  // 2. The Magician's Touch: Transform background based on "Level"
-  const bgColor = useTransform(scrollYProgress, [0, 0.5, 1], ["#0a0a0a", "#1a1a1a", "#0a0a0a"]);
-  const activeLevel = useTransform(scrollYProgress, [0, 0.5, 1], ["LVL 1", "LVL 5", "LVL 10"]);
+  const bgColor = useTransform(globalScroll, [0, 0.5, 1], ["#0a0a0a", "#1a1a1a", "#0a0a0a"]);
+  const activeLevel = useTransform(globalScroll, [0, 0.5, 1], ["LVL 1", "LVL 5", "LVL 10"]);
 
   return (
     <motion.div ref={containerRef} style={{ backgroundColor: bgColor }} className="scrolly-container">
       
-      {/* 3. The Sticky Stage: Stays pinned while you scroll */}
+      {/* 3. The Sticky Stage: Pinned HUD and Experience Bar */}
       <div className="sticky-stage">
         <div className="experience-bar-container">
           <motion.div 
             className="experience-bar" 
-            style={{ scaleX: scrollYProgress, transformOrigin: "0%" }} 
+            style={{ scaleX: globalScroll, transformOrigin: "0%" }} 
           />
         </div>
         
-        {/* Visual HUD: Shows current Level status */}
+        {/* Visual HUD: Keeps player status visible at all times */}
         <div className="hud-display pixel-border">
           <p>{">"} STATUS: ACTIVE</p>
           <motion.h3>{activeLevel}</motion.h3>
         </div>
       </div>
 
-      {/* 4. Scrolling Steps: Modular content from your files */}
+      {/* 4. Animated Scrolling Steps: Integrated SceneWrappers */}
       <main className="content-steps">
-        <div className="step-wrapper"><Hero /></div>
-        <div className="step-wrapper"><AboutMe /></div>
-        <div className="step-wrapper"><ProjectSlider /></div>
-        <div className="step-wrapper"><CTA /></div>
+        <SceneWrapper><Hero /></SceneWrapper>
+        <SceneWrapper><AboutMe /></SceneWrapper>
+        <SceneWrapper><ProjectSlider /></SceneWrapper>
+        <SceneWrapper><CTA /></SceneWrapper>
       </main>
 
     </motion.div>
