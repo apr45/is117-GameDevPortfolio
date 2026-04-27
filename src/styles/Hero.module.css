@@ -1,15 +1,14 @@
-.heroScene {
-  position: relative;
-  /* Reduced from 120vh to 100vh to fit perfectly on one screen */
-  height: 100vh; 
-  width: 100%;
-  display: flex;
+.heroGrid {
+  display: grid;
+  /* 1. Adjusted ratio: Text column is now slightly narrower to pull the visual closer */
+  grid-template-columns: 1.2fr 1fr; 
+  /* 2. Reduced gap from 2rem to 1rem */
+  gap: 1rem; 
+  width: 95%; /* Increased width to allow elements to breathe near the edges */
+  max-width: 1300px;
   align-items: center;
-  justify-content: center;
-  background: #050505;
-  overflow: hidden;
-  /* Adjust padding to ensure content doesn't feel cramped but removes the gap */
-  padding: 60px 0 20px 0; 
+  position: relative;
+  z-index: 2;
 }
 
 .heroGrid {
@@ -23,26 +22,28 @@
 }
 
 .heroTextBlock {
-  justify-self: start;
+  /* Ensure the text stays hugged to the right side of its column */
+  justify-self: end; 
+  text-align: right;
+  padding-right: 1rem;
 }
 
 .heroHeadline {
   font-family: var(--font-pixel);
-  font-size: 5.5rem;
-  line-height: 1;
+  /* Adjusted font size slightly for better fitting in the narrower column */
+  font-size: 5rem; 
+  line-height: 0.95;
   text-transform: uppercase;
   color: var(--text-main);
   margin: 0;
-  /* Ensure no residual glitch animations are attached */
-  animation: none !important; 
 }
 
 .heroVisualBlock {
-  /* FIX: This pulls the terminal window to the right edge of the grid */
-  justify-self: end; 
+  /* Ensure the terminal stays hugged to the left side of its column */
+  justify-self: start; 
   width: 100%;
-  max-width: 500px;
-  margin-top: 60 px;
+  max-width: 480px; /* Slightly smaller to help with the "closeness" feel */
+  margin-top: 20px;
 }
 
 .retroTerminalWindow {
@@ -121,7 +122,7 @@
   overflow: hidden;
   border-right: 2px solid var(--accent-yellow);
   white-space: nowrap;
-  animation: typing 3s steps(30, end) infinite, blink 0.75s step-end infinite;
+  animation: typing 3s steps(25, end) infinite, blink 0.75s step-end infinite;
 }
 
 @keyframes typing {
