@@ -192,6 +192,18 @@ body {
 }
 
 /* --- CRT SCANLINE OVERLAY --- */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* Prevents the whole page from wobbling left/right */
+  margin: 0;
+  padding: 0;
+}
+
+.scrolly-container {
+  width: 100%;
+  overflow-x: hidden; /* Safety lock */
+}
+
 .scrolly-container::after {
   content: " ";
   display: block;
