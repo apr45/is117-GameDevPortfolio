@@ -10,13 +10,9 @@ const Hero: React.FC = () => {
     <section id="hero" className={styles.heroScene}>
       
       {/* --- BACKGROUND LAYER --- */}
-      <div className={styles.backgroundCanvas}>
-        <motion.div 
-          style={{ y: gridY }}
-          className={styles.gridFloor} 
-        />
-        
-        {/* Removed floatingCircle from here */}
+     <div className={styles.backgroundCanvas}>
+        {/* Changed motion.div to standard div and removed style={{ y: gridY }} */}
+        <div className={styles.gridFloor} />
 
         <div className={styles.dataPulseContainer}>
           {[...Array(4)].map((_, i) => (
@@ -52,7 +48,8 @@ const Hero: React.FC = () => {
             className={styles.retroTerminalWindow}
           >
             <div className={styles.terminalHeader}>
-              <span className={styles.typingText}>[ANALYZING_ENTITY.SYS]...                   _ [] X</span>
+              <span className={styles.typingText}>[ANALYZING_ENTITY.SYS]...</span>
+              <div className={styles.controlButtons}>_ [] X</div>
             </div>
             
             <div className={styles.assetVisualArea}>
