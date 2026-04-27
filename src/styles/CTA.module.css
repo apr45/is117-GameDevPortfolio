@@ -1,0 +1,92 @@
+.ctaContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+}
+
+.terminalBox {
+  width: 90%;
+  max-width: 800px;
+  background: #000;
+  border: 4px solid var(--accent-pink);
+  padding: 3rem;
+  position: relative;
+  box-shadow: 10px 10px 0px #333;
+}
+
+/* Retro Scanline Effect for the box */
+.terminalBox::before {
+  content: " ";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+              linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
+.statusHeader {
+  color: var(--accent-yellow);
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.description {
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+/* The Interactive Arcade Button */
+.pixelButton {
+  background: var(--accent-pink);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-family: var(--font-pixel);
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 6px 0 #990033;
+  transition: all 0.1s ease;
+}
+
+.pixelButton:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #990033;
+}
+
+.pixelButton:hover {
+  background: var(--accent-yellow);
+  color: #000;
+  box-shadow: 0 6px 0 #b7950b;
+}
+
+.socialLinks {
+  margin-top: 3rem;
+  display: flex;
+  gap: 20px;
+  border-top: 1px solid #333;
+  padding-top: 1.5rem;
+}
+
+.linkItem {
+  color: var(--accent-pink);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.linkItem:hover {
+  text-decoration: underline;
+}
