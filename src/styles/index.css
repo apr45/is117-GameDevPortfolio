@@ -80,22 +80,22 @@ body {
 .content-steps {
   position: relative;
   z-index: 2;
-  margin-top: -100vh; /* Pulls content over the sticky background */
+  /* Remove any negative margins */
+  margin-top: 0; 
+  /* Add padding so the first scene starts visible below the header */
+  padding-top: 15vh; 
   margin-left: 60px;
   width: calc(100% - 60px);
 }
 
 .step-wrapper {
-  min-height: 120vh; 
+  /* Reduce this slightly so the scroll feels more responsive */
+  min-height: 100vh; 
   display: flex;
   align-items: center;
-  /* Changed to flex-start so content sticks to our new 60px "spine" */
-  justify-content: flex-start; 
-  
-  /* Internal padding to keep text from hitting the right edge */
-  padding-right: 10%; 
-  pointer-events: none;
-  margin-bottom: 20vh; 
+  justify-content: flex-start;
+  padding-right: 10%;
+  margin-bottom: 10vh; /* Reduced gap between scenes */
 }
 
 .step-wrapper > * {

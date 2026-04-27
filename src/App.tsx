@@ -14,14 +14,14 @@ const SceneWrapper = ({ children }: { children: React.ReactNode }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"]
+    // Adjusted offset to trigger earlier in the scroll
+    offset: ["start end", "end start"] 
   });
 
-  // Animation logic: Fade and zoom in at 20% scroll, fade and zoom out at 80%
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
+  // Change these values to [0, 0.1, 0.9, 1] so it fades in ALMOST immediately
+  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0.9, 1, 1, 0.9]);
   
-  // Smooth out the scale transition for a premium feel
   const smoothScale = useSpring(scale, { stiffness: 100, damping: 30 });
 
   return (
