@@ -1,22 +1,27 @@
 .heroScene {
-  position: relative; /* Container for the background */
-  min-height: 120vh;
+  position: relative;
+  /* Reduced from 120vh to 100vh to fit perfectly on one screen */
+  height: 100vh; 
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #050505; /* Deep black for contrast */
+  background: #050505;
   overflow: hidden;
+  /* Adjust padding to ensure content doesn't feel cramped but removes the gap */
+  padding: 60px 0 20px 0; 
 }
 
 .heroGrid {
   display: grid;
-  /* Balanced 50/50 split */
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   width: 90%;
   max-width: 1400px;
   align-items: center;
+  /* Added z-index to stay above the gridFloor */
+  position: relative;
+  z-index: 2; 
 }
 
 .heroTextBlock {
@@ -141,24 +146,26 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  bottom: 0;
   z-index: 0;
   pointer-events: none;
 }
 
 .gridFloor {
   position: absolute;
-  bottom: -20%;
+  /* Pulling the floor up slightly to close the visual gap */
+  bottom: 0; 
   left: -10%;
   width: 120%;
-  height: 100%;
-  /* Changed from 1px to 2px for better visibility */
+  height: 50%; /* Only cover the bottom half of the screen */
   background-image: 
     linear-gradient(rgba(255, 0, 85, 0.15) 2px, transparent 2px),
     linear-gradient(90deg, rgba(255, 0, 85, 0.15) 2px, transparent 2px);
   background-size: 60px 60px;
   transform: perspective(600px) rotateX(65deg);
+  /* Use a mask to fade the grid out so it doesn't just cut off */
+  mask-image: linear-gradient(to top, rgba(0,0,0,1), transparent);
 }
 
 .pulseLine {
