@@ -86,24 +86,6 @@ body {
   width: calc(100% - 60px);
 }
 
-/* --- HERO-SPECIFIC ALIGNMENT OVERRIDE --- */
-
-/* Targets the first step-wrapper (The Hero) */
-.content-steps .step-wrapper:first-child {
-  justify-content: center; /* Center the Hero content horizontally */
-  margin-left: 0;         /* Remove the 60px gutter for this section only */
-  padding-right: 0;       /* Remove the right-side buffer */
-  width: 100%;            /* Ensure it uses the full width of the screen */
-}
-
-/* Ensure the Hero Grid inside stays centered */
-.content-steps .step-wrapper:first-child > #hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
 .step-wrapper {
   /* Reduce this slightly so the scroll feels more responsive */
   min-height: 100vh; 
