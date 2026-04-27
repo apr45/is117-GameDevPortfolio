@@ -1,26 +1,14 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import styles from '../styles/ProjectSlider.module.css'; // Recommended for horizontal layout logic
+import React from 'react';
+import styles from '../styles/ProjectSlider.module.css';
 
 const ProjectSlider: React.FC = () => {
-  const targetRef = useRef<HTMLDivElement>(null);
-  
-  // 1. Logic Architecture: Track scroll progress relative to this section
-  const { scrollYProgress } = useScroll({
-    target: targetRef
-  });
-
-  // 2. The Magician's Transition: Translate vertical scroll (0 to 1) 
-  // into horizontal movement (-X percentage)
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-70%"]);
-
   return (
-    <section ref={targetRef} className={styles.horizontalScrollContainer}>
-      <div className={styles.stickyWrapper}>
-        <h2 className={styles.sectionTitle}>{">"} PROJECT_LOGS</h2>
-        
-        {/* 3. The Track: This div moves horizontally as you scroll vertically */}
-        <motion.div style={{ x }} className={styles.projectTrack}>
+    <section className={styles.projectSection} id="projects">
+      <h2 className={styles.sectionTitle}>{">"} PROJECT_LOGS</h2>
+      
+      {/* Native horizontal scroll container */}
+      <div className={styles.scrollContainer}>
+        <div className={styles.projectTrack}>
           
           {/* Project Item 1: Physics Engine */}
           <div className={`${styles.projectCard} pixel-border`}>
@@ -42,7 +30,7 @@ const ProjectSlider: React.FC = () => {
             <div className={styles.techStack}>#JAVA #NETWORKING #THREADS</div>
           </div>
 
-          {/* Project Item 3: BauHaus Museum (New) */}
+          {/* Project Item 3: BauHaus Museum */}
           <div className={`${styles.projectCard} pixel-border`}>
             <div className={styles.cardHeader}>
               <h1 style={{ color: 'var(--accent-yellow)' }}>[ITEM: BAUHAUS_DIGITAL]</h1>
@@ -52,13 +40,13 @@ const ProjectSlider: React.FC = () => {
             <div className={styles.techStack}>#WEB #DESIGN #BAUHAUS</div>
           </div>
 
-          {/* Locked Slot for Future Sprints */}
+          {/* Locked Slot */}
           <div className={`${styles.projectCard} ${styles.lockedSlot} pixel-border`}>
             <h3>[LOCKED_SLOT]</h3>
             <p>Complete more code sprints to unlock this project log.</p>
           </div>
 
-        </motion.div>
+        </div>
       </div>
     </section>
   );

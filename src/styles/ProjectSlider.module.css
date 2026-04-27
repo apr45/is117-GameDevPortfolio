@@ -1,43 +1,97 @@
-/* Container height dictates how "long" the horizontal scroll feels */
-.horizontalScrollContainer {
-  height: 300vh; 
-  position: relative;
-  background-color: transparent;
-}
-
-.stickyWrapper {
-  position: sticky;
-  top: 0;
-  height: 100vh;
+.projectSection {
+  width: 100%;
+  padding: 80px 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  overflow: hidden; /* Hide the cards that aren't on screen */
+  align-items: center;
+  /* Ensure it doesn't inherit the 60px spine from index.css */
+  margin-left: 0 !important; 
 }
 
 .sectionTitle {
-  margin-left: 5%;
-  margin-bottom: 2rem;
+  width: 85%;
+  max-width: 1400px;
+  margin-bottom: 2.5rem;
+  font-family: var(--font-pixel);
+  color: var(--text-main);
+  text-align: left;
+}
+
+.scrollContainer {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2rem 0 4rem 0;
+  
+  /* Retro Scrollbar Styling */
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-pink) transparent;
+  
+  /* Scroll Snap: This centers the card in the red-circled area automatically */
+  scroll-snap-type: x mandatory;
+}
+
+/* Chrome/Safari Scrollbar */
+.scrollContainer::-webkit-scrollbar {
+  height: 8px;
+}
+.scrollContainer::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+.scrollContainer::-webkit-scrollbar-thumb {
+  background: var(--accent-pink);
+  border-radius: 0px; /* Sharp retro edges */
 }
 
 .projectTrack {
-  display: flex;
-  gap: 4rem;
-  padding-left: 25%;
+  display: inline-flex;
+  gap: 3rem;
+  padding: 0 10vw; /* Gutter so the first/last items center properly */
 }
 
 .projectCard {
-  flex-shrink: 0;
-  width: 450px;
-  height: 300px;
-  background: #000;
-  padding: 2rem;
+  flex: 0 0 450px; /* Fixed width for cards */
+  height: 320px;
+  background: #111;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  scroll-snap-align: center; /* The card "magnets" to the center of the screen */
+  transition: transform 0.3s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-10px);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.rarityLabel {
+  font-size: 0.6rem;
+  background: #333;
+  padding: 2px 6px;
+  border: 1px solid #666;
+}
+
+.techStack {
+  font-size: 0.7rem;
+  color: var(--accent-pink);
+  letter-spacing: 1px;
 }
 
 .lockedSlot {
   opacity: 0.4;
-  border-style: dashed;
+  border-style: dashed !important;
+  background: repeating-linear-gradient(
+    45deg,
+    #1a1a1a,
+    #1a1a1a 10px,
+    #222 10px,
+    #222 20px
+  );
 }
