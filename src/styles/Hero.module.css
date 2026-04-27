@@ -145,33 +145,41 @@
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
   pointer-events: none;
+  /* Added a subtle background color to ensure the grid pops */
+  background-color: #050505; 
 }
 
 .gridFloor {
   position: absolute;
-  bottom: -20%;
-  left: -10%;
-  width: 120%;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  /* Changed from 1px to 2px for better visibility */
+  /* REMOVED: transform: perspective(600px) rotateX(65deg); */
+  /* REMOVED: mask-image: linear-gradient(...); */
+  
   background-image: 
     linear-gradient(rgba(255, 0, 85, 0.15) 2px, transparent 2px),
     linear-gradient(90deg, rgba(255, 0, 85, 0.15) 2px, transparent 2px);
   background-size: 60px 60px;
-  transform: perspective(600px) rotateX(65deg);
+  
+  /* Ensure it covers the whole area without gaps */
+  background-repeat: repeat;
 }
 
 .pulseLine {
   position: absolute;
-  top: -10vh;
-  width: 1px;
-  height: 20vh;
+  top: -20vh;
+  width: 2px;
+  height: 30vh;
   background: linear-gradient(to bottom, transparent, var(--accent-yellow));
-  animation: dataFall 5s linear infinite;
+  box-shadow: 0 0 10px var(--accent-yellow);
+  animation: dataFall 6s linear infinite;
+  z-index: 1;
 }
 
 @keyframes dataFall {
