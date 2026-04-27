@@ -83,7 +83,7 @@ body {
   /* Add padding so the first scene starts visible below the header */
   padding-top: 15vh; 
   margin-left: 60px;
-  width: calc(100% - 60px);
+  width: 100%;
 }
 
 /* --- HERO-SPECIFIC ALIGNMENT OVERRIDE --- */
