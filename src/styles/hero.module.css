@@ -1,0 +1,72 @@
+/* Layout Architecture for the Hero */
+.hero-scene {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-primary); /* Ensuring dark background */
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; /* Narrative is wider than visual */
+  gap: 4rem;
+  max-width: 1200px;
+  width: 90%;
+}
+
+/* Jules Morrow Text Styling (Adapted for 8-bit) */
+.hero-label {
+  font-size: 0.8rem;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.hero-headline {
+  font-family: var(--font-pixel); /* Using monospace/pixel font */
+  font-size: 3.5rem; /* Large, bold impact like the exemplar */
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 2rem;
+}
+
+.hero-subtext {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc; /* Slightly dimmer for contrast */
+  max-width: 600px;
+}
+
+/* Magician Archetype: The Glow Effect */
+.glow-yellow {
+  color: var(--accent-yellow);
+  text-shadow: 0 0 10px var(--accent-yellow);
+}
+
+.glow-pink {
+  color: var(--accent-pink);
+  text-shadow: 0 0 10px var(--accent-pink);
+}
+
+.highlight {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Right Column: Retro Vector styling */
+.hero-visual-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111; /* Dark background for the asset box */
+  height: 400px; /* Matching the exemplar height */
+}
+
+.retro-vector-placeholder {
+  color: #333;
+  font-size: 1.5rem;
+  border: 1px dashed #333;
+  padding: 2rem;
+}
