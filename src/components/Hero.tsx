@@ -6,11 +6,6 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className={styles.heroScene}>
 
-        {/* GLOBAL STICKY HEADER (formerly heroLabel) */}
-      <div className={`${styles.heroLabel} ${styles.stickyHeader}`}>
-        {">"} NJIT // <span className={styles.blue}>IT</span> // <span className={styles.green}>GAME DEV STUDENT</span>
-      </div>
-      
       <div className={styles.heroGrid}>
         
         {/* LEFT COLUMN: Narrative & Title Structure */}

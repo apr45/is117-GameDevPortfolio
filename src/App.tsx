@@ -49,9 +49,15 @@ const App: React.FC = () => {
 
   return (
     <motion.div ref={containerRef} style={{ backgroundColor: bgColor }} className="scrolly-container">
+
+      {/* 1. THE GLOBAL STICKY HEADER (Now using index.css classes) */}
+      <header className="global-sticky-header">
+        {">"} NJIT // <span className="blue-accent">IT</span> // <span className="green-accent">GAME DEV STUDENT</span>
+      </header>
       
       {/* 3. The Sticky Stage: Pinned HUD and Experience Bar */}
       <div className="sticky-stage">
+        
         <div className="experience-bar-container">
           <motion.div 
             className="experience-bar" 

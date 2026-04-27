@@ -116,3 +116,39 @@ body {
   margin: 4px 0 0 0;
   color: var(--accent-yellow);
 }
+
+/* --- GLOBAL STICKY HEADER (Sprint 3) --- */
+
+.global-sticky-header {
+  position: fixed; /* Ensures it sits above the scrollytelling layers */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.9); /* Semi-transparent 8-bit black */
+  backdrop-filter: blur(4px);
+  padding: 1rem 5%;
+  z-index: 10000; /* Highest priority */
+  border-bottom: 2px solid var(--accent-pink);
+  
+  /* Text Styling */
+  font-family: var(--font-pixel);
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.global-sticky-header .blue-accent {
+  color: #00ffff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+.global-sticky-header .green-accent {
+  color: #00ff00;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+}
+
+/* Ensure the sticky-stage and HUD don't overlap the new header */
+.sticky-stage {
+  padding-top: 60px; 
+}
