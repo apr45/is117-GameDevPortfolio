@@ -14,7 +14,7 @@ const CTA: React.FC = () => {
         <span className={styles.statusHeader}>[SYSTEM_STATUS: ONLINE] [LOCATION: NJIT]</span>
         
         <h2 className={styles.mainTitle}>
-          Establish <span style={{color: 'var(--accent-pink)'}}>Connection</span>
+          Establish <span style={{color: 'var(--accent-yellow)'}}>Connection</span>
         </h2>
         
         <p className={styles.description}>
@@ -32,11 +32,7 @@ const CTA: React.FC = () => {
           INITIATE_CHAT.EXE
         </motion.button>
 
-        <div className={styles.socialLinks}>
-          <a href="#" className={styles.linkItem}>GITHUB //</a>
-          <a href="#" className={styles.linkItem}>LINKEDIN //</a>
-          <a href="#" className={styles.linkItem}>DISCORD</a>
-        </div>
+        {/* Social links removed from here */}
       </motion.div>
     </footer>
   );
