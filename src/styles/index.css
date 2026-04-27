@@ -73,7 +73,7 @@ body {
   /* Push the entire stage down so it starts below the 60px header */
   justify-content: flex-start; 
   padding-top: 80px; 
-  z-index: 9999; 
+  z-index: 100; 
   pointer-events: none;
 }
 
@@ -86,6 +86,24 @@ body {
   padding-top: 15vh; 
   margin-left: 60px;
   width: calc(100% - 60px);
+}
+
+/* --- HERO-SPECIFIC ALIGNMENT OVERRIDE --- */
+
+/* Targets the first step-wrapper (The Hero) */
+.content-steps .step-wrapper:first-child {
+  justify-content: center; /* Center the Hero content horizontally */
+  margin-left: 0;         /* Remove the 60px gutter for this section only */
+  padding-right: 0;       /* Remove the right-side buffer */
+  width: 100%;            /* Ensure it uses the full width of the screen */
+}
+
+/* Ensure the Hero Grid inside stays centered */
+.content-steps .step-wrapper:first-child > #hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .step-wrapper {
@@ -103,8 +121,8 @@ body {
   /* Optional: further refine the width of individual cards/sections */
   max-width: 1100px; 
 }
-/* --- Experience Bar Logic --- */
 
+/* --- Experience Bar Logic --- */
 .experience-tracker {
   width: 90%;
   max-width: 1200px;
