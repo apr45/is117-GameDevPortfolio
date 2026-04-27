@@ -3,6 +3,9 @@
   height: 300vh; 
   position: relative;
   background-color: transparent;
+  /* Remove global spine influence */
+  margin-left: 0 !important;
+  width: 100%;
 }
 
 .stickyWrapper {
@@ -12,18 +15,23 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: hidden; /* Hide the cards that aren't on screen */
+  align-items: center; /* Center the title and track horizontally */
+  overflow: hidden;
 }
 
 .sectionTitle {
-  margin-left: 5%;
+  /* Center the title instead of margin-left: 5% */
   margin-bottom: 2rem;
+  width: 85%;
+  max-width: 1400px;
+  text-align: left; /* Keeps text aligned with the start of the bar/header */
 }
 
 .projectTrack {
   display: flex;
   gap: 4rem;
-  padding-left: 5%;
+  /* This padding ensures the first card starts centered in the screen */
+  padding-left: calc(50vw - 225px); 
 }
 
 .projectCard {
@@ -35,6 +43,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border: var(--border-pixel); /* Ensure it uses your global 8-bit border */
 }
 
 .lockedSlot {

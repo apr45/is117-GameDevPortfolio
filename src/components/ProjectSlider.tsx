@@ -12,7 +12,7 @@ const ProjectSlider: React.FC = () => {
 
   // 2. The Magician's Transition: Translate vertical scroll (0 to 1) 
   // into horizontal movement (-X percentage)
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-65%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-70%"]);
 
   return (
     <section ref={targetRef} className={styles.horizontalScrollContainer}>
