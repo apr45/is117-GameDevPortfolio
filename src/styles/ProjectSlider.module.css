@@ -9,21 +9,24 @@
 }
 
 .sectionTitle {
-  /* This width and margin ensure the title aligns with the XP bar */
-  width: 90%; 
+  /* Spine Unity: Lock width to 90% and use auto margins to center, 
+     matching your XP bar and Header alignment constraints. */
+  width: 90%;
   max-width: 1400px;
-  margin-bottom: 2.5rem;
+  margin: 0 auto 2.5rem auto; /* Centers the title within its 90% track */
   font-family: var(--font-pixel);
+  color: var(--text-main);
   text-align: left;
 }
 
 .scrollContainer {
-  /* EXPANDED: Now reaches almost to the end of the screen */
+  /* Expanded Width: We increase to 95% width to reach near the screen edge, 
+     covering the area defined by your yellow line. */
   width: 95%; 
-  max-width: 1600px;
+  max-width: 1600px; /* High cap to prevent clipping on wide monitors */
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 2rem 0;
+  padding: 2rem 0; /* Vertical breathing room */
   
   /* Retro Scrollbar */
   scrollbar-width: thin;
@@ -40,25 +43,28 @@
 }
 .scrollContainer::-webkit-scrollbar-thumb {
   background: var(--accent-pink);
+  border-radius: 0px; /* Sharp retro edges */
 }
 
+/* --- 3. THE TRACK & SNAP LOGIC --- */
 .projectTrack {
   display: inline-flex;
   gap: 3rem;
-  /* ALIGN TO RIGHT: Matches the title's start position */
-  /* We use 2.5% to give a small buffer from the left edge */
+  /* ALIGN TO RIGHT (Sync with Title P): Apply calculated padding 
+     to ensure the first card sits under the "P" of "PROJECT_LOGS." */
   padding-left: 2.5%; 
-  padding-right: 10vw; /* Buffer at the end so the last card isn't stuck */
+  /* End padding buffer prevents the last card from cutting off */
+  padding-right: 15vw; 
 }
 
 .projectCard {
-  flex: 0 0 450px;
+  flex: 0 0 450px; /* Fixed width for cards */
   height: 320px;
   background: #111;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  scroll-snap-align: start; /* Changed to 'start' to keep the left-alignment clean */
+  scroll-snap-align: center; /* The card "magnets" to the center of the screen */
   transition: transform 0.3s ease;
   border: var(--border-pixel);
 }
