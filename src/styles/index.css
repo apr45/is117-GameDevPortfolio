@@ -65,16 +65,12 @@ body {
 
 .sticky-stage {
   position: sticky;
-  top: 0;
-  height: 100vh;
+  top: 60px; /* Start right after the fixed header */
+  height: 0; /* Ensures it doesn't push the actual content down */
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Push the entire stage down so it starts below the 60px header */
-  justify-content: flex-start; 
-  padding-top: 80px; 
-  z-index: 1;
-  pointer-events: none;
+  z-index: 1000;
 }
 
 .content-steps {
@@ -95,30 +91,44 @@ body {
   pointer-events: auto; /* Re-enables interaction for buttons/cards */
 }
 
-.hud-display {
-  /* Ensure the status box sits comfortably below the header and progress bar */
-  margin-top: 20px; 
-  align-self: flex-end; /* Keeps it on the right side if preferred */
-  margin-right: 5%;
-  pointer-events: auto;
-  
-  /* Maintain the 8-bit aesthetic */
-  background: rgba(26, 26, 26, 0.9);
-  border: var(--border-pixel);
-  box-shadow: 6px 6px 0px var(--accent-pink);
+/* --- Experience Bar Logic --- */
+
+.experience-tracker {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  pointer-events: none;
+  margin-top: 10px; /* Space below the header */
 }
 
-.hud-display h3 {
-  margin: 4px 0 0 0;
-  color: var(--accent-yellow);
+.bar-label {
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  color: var(--accent-pink);
+  white-space: nowrap;
 }
 
 .experience-bar-container {
-  width: 90%;
-  height: 10px;
-  background: #333;
-  margin-bottom: 10px;
-  border: 2px solid #fff;
+  flex-grow: 1;
+  height: 12px;
+  background: #1a1a1a;
+  border: 2px solid #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.experience-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-pink), var(--accent-yellow));
+  box-shadow: 0 0 15px var(--accent-pink);
+}
+
+/* Remove the old hud-display styles if you no longer need them */
+.hud-display {
+  display: none;
 }
 
 /* --- GLOBAL STICKY HEADER (Sprint 3) --- */

@@ -45,7 +45,6 @@ const App: React.FC = () => {
   });
 
   const bgColor = useTransform(globalScroll, [0, 0.5, 1], ["#0a0a0a", "#1a1a1a", "#0a0a0a"]);
-  const activeLevel = useTransform(globalScroll, [0, 0.5, 1], ["LVL 1", "LVL 5", "LVL 10"]);
 
   return (
     <motion.div ref={containerRef} style={{ backgroundColor: bgColor }} className="scrolly-container">
@@ -55,24 +54,21 @@ const App: React.FC = () => {
         {">"} NJIT // <span className="blue-accent">IT</span> // <span className="green-accent">GAME DEV STUDENT</span>
       </header>
       
-      {/* 3. The Sticky Stage: Pinned HUD and Experience Bar */}
+      {/* 2. THE STICKY HUD STAGE */}
       <div className="sticky-stage">
-        
-        <div className="experience-bar-container">
-          <motion.div 
-            className="experience-bar" 
-            style={{ scaleX: globalScroll, transformOrigin: "0%" }} 
-          />
-        </div>
-        
-        {/* Visual HUD: Keeps player status visible at all times */}
-        <div className="hud-display pixel-border">
-          <p>{">"} STATUS: ACTIVE</p>
-          <motion.h3>{activeLevel}</motion.h3>
+        {/* Experience Bar Container: Pinned at the top just below the header */}
+        <div className="experience-tracker">
+          <div className="bar-label">XP_PROGRESS:</div>
+          <div className="experience-bar-container">
+            <motion.div 
+              className="experience-bar" 
+              style={{ scaleX: globalScroll, transformOrigin: "0%" }} 
+            />
+          </div>
         </div>
       </div>
 
-      {/* 4. Animated Scrolling Steps: Integrated SceneWrappers */}
+      {/* 3. Animated Scrolling Steps: Integrated SceneWrappers */}
       <main className="content-steps">
         <SceneWrapper><Hero /></SceneWrapper>
         <SceneWrapper><AboutMe /></SceneWrapper>
