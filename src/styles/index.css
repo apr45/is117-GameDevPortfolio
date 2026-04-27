@@ -104,6 +104,36 @@ body {
   width: 100%;
 }
 
+/* --- PROJECT SECTION CENTERING --- */
+
+/* 1. Target the specific wrapper containing the projects */
+.content-steps .step-wrapper:has(#projects) {
+  display: flex;
+  justify-content: center; /* Centers the ProjectSlider horizontally */
+  align-items: center;     /* Centers it vertically in the scroll section */
+  margin-left: 0 !important; /* Removes the 60px "spine" offset */
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+/* 2. Force the ProjectSlider internal container to center its children */
+#projects {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the title and the grid */
+}
+
+/* 3. Target the actual grid of cards (the red circled area) */
+#projects > div {
+  display: flex !important;
+  justify-content: center !important; /* Centers the cards within the row */
+  flex-wrap: wrap;           /* Allows cards to wrap if screen is small */
+  gap: 2rem;                 /* Keeps spacing between centered cards */
+  width: 100%;
+  max-width: 1400px;         /* Limits width so it stays tidy on ultrawide */
+}
+
 .step-wrapper {
   /* Reduce this slightly so the scroll feels more responsive */
   min-height: 100vh; 
