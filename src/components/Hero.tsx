@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
             className={styles.retroTerminalWindow}
           >
             <div className={styles.terminalHeader}>
-              <span className={styles.typingText}>[ANALYZING_ENTITY.SYS]...      _ [] X</span>
+              <span className={styles.typingText}>[ANALYZING_ENTITY.SYS]...                   _ [] X</span>
             </div>
             
             <div className={styles.assetVisualArea}>
