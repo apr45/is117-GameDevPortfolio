@@ -25,13 +25,13 @@
 
 .heroHeadline {
   font-family: var(--font-pixel);
-  /* MASSIVE TEXT: Increased from 3.5rem to 5.5rem */
-  font-size: 5.5rem; 
+  font-size: 5.5rem;
   line-height: 1;
   text-transform: uppercase;
   color: var(--text-main);
   margin: 0;
-  letter-spacing: -2px;
+  /* Ensure no residual glitch animations are attached */
+  animation: none !important; 
 }
 
 .heroVisualBlock {
@@ -119,20 +119,6 @@
   50% { border-color: var(--accent-yellow) }
 }
 
-/* --- SUBTLE GLITCH FOR HEADLINE --- */
-.heroHeadline:hover {
-  animation: glitch 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
-}
-
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-3px, 3px); color: var(--accent-pink); }
-  40% { transform: translate(-3px, -3px); color: var(--accent-yellow); }
-  60% { transform: translate(3px, 3px); }
-  80% { transform: translate(3px, -3px); }
-  100% { transform: translate(0); }
-}
-
 /* --- STATIC OVERLAY --- */
 .staticOverlay {
   position: absolute;
@@ -167,9 +153,10 @@
   left: -10%;
   width: 120%;
   height: 100%;
+  /* Changed from 1px to 2px for better visibility */
   background-image: 
-    linear-gradient(rgba(255, 0, 85, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 0, 85, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(255, 0, 85, 0.15) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255, 0, 85, 0.15) 2px, transparent 2px);
   background-size: 60px 60px;
   transform: perspective(600px) rotateX(65deg);
 }
@@ -188,14 +175,4 @@
   20% { opacity: 0.5; }
   80% { opacity: 0.5; }
   to { transform: translateY(120vh); opacity: 0; }
-}
-
-.floatingCircle {
-  position: absolute;
-  top: 10%;
-  right: 5%;
-  width: 400px;
-  height: 400px;
-  border: 1px solid rgba(241, 196, 15, 0.1);
-  border-radius: 50%;
 }

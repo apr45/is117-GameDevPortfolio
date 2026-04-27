@@ -3,9 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import styles from '../styles/Hero.module.css';
 
 const Hero: React.FC = () => {
-  // 1. Background Motion Logic
   const { scrollY } = useScroll();
-  // Creates parallax depth for the grid floor
   const gridY = useTransform(scrollY, [0, 500], [0, -150]);
 
   return (
@@ -13,23 +11,13 @@ const Hero: React.FC = () => {
       
       {/* --- BACKGROUND LAYER --- */}
       <div className={styles.backgroundCanvas}>
-        {/* Perspective Grid Floor */}
         <motion.div 
           style={{ y: gridY }}
           className={styles.gridFloor} 
         />
         
-        {/* Floating Bauhaus Circle */}
-        <motion.div 
-          animate={{ 
-            rotate: 360,
-            scale: [1, 1.05, 1] 
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className={styles.floatingCircle}
-        />
+        {/* Removed floatingCircle from here */}
 
-        {/* Data Pulses: Vertical 'Pings' */}
         <div className={styles.dataPulseContainer}>
           {[...Array(4)].map((_, i) => (
             <div 
@@ -44,10 +32,11 @@ const Hero: React.FC = () => {
       {/* --- CONTENT LAYER --- */}
       <div className={styles.heroGrid}>
         <div className={styles.heroTextBlock}>
+          {/* Simple Fade-In Entrance (No Glitch/Skew) */}
           <motion.h1 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className={styles.heroHeadline}
           >
             I BUILD <span className={styles.glowYellow}>SYSTEMS</span> <br/>
@@ -57,7 +46,7 @@ const Hero: React.FC = () => {
         
         <div className={styles.heroVisualBlock}>
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
             className={styles.retroTerminalWindow}
