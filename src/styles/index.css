@@ -83,7 +83,7 @@ body {
   /* Add padding so the first scene starts visible below the header */
   padding-top: 15vh; 
   margin-left: 60px;
-  width: 100%;
+  width: calc(100% - 60px);
 }
 
 /* --- HERO-SPECIFIC ALIGNMENT OVERRIDE --- */
@@ -116,8 +116,7 @@ body {
 
 .step-wrapper > * {
   pointer-events: auto;
-  /* Optional: further refine the width of individual cards/sections */
-  max-width: 1100px; 
+ 
 }
 
 /* --- Experience Bar Logic --- */
