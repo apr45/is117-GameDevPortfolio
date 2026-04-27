@@ -1,11 +1,8 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import styles from '../styles/Hero.module.css';
 
 const Hero: React.FC = () => {
-  const { scrollY } = useScroll();
-  const gridY = useTransform(scrollY, [0, 500], [0, -150]);
-
   return (
     <section id="hero" className={styles.heroScene}>
       
