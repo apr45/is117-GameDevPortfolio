@@ -1,61 +1,33 @@
-/* Layout Architecture for the Hero */
 .heroScene {
-  height: 100vh;
+  /* Increased height to make the section feel "bigger" */
+  min-height: 120vh; 
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-primary); /* Ensuring dark background */
+  background-color: var(--bg-primary);
+  padding: 100px 0;
 }
 
 .heroGrid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr; /* Narrative is wider than the visual asset */
-  gap: 4rem;
+  /* Shifted ratio to give the text even more dominance */
+  grid-template-columns: 1.8fr 1fr; 
+  gap: 2rem;
   width: 90%;
-  max-width: 1200px;
-}
-
-/* LEFT COLUMN: Narrative & Title Impact */
-.heroLabel {
-  font-size: 0.8rem;
-  color: #666;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+  max-width: 1400px;
 }
 
 .heroHeadline {
-  font-family: var(--font-pixel); /* Monospace/Pixel font */
-  font-size: 3.5rem; /* Large, bold impact like the reference */
-  line-height: 1.1;
+  font-family: var(--font-pixel);
+  /* MASSIVE TEXT: Increased from 3.5rem to 5.5rem */
+  font-size: 5.5rem; 
+  line-height: 1;
   text-transform: uppercase;
   color: var(--text-main);
-  margin: 1.5rem 0 2rem 0;
+  margin: 0;
+  letter-spacing: -2px;
 }
 
-.heroSubtext {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ccc; /* Slightly dimmer for contrast */
-  max-width: 600px;
-}
-
-/* Magician Archetype: The Glow Effects */
-.glowYellow { 
-  color: var(--accent-yellow); 
-  text-shadow: 0 0 10px var(--accent-yellow); 
-}
-
-.glowPink { 
-  color: var(--accent-pink); 
-  text-shadow: 0 0 10px var(--accent-pink); 
-}
-
-.highlight {
-  color: #fff;
-  font-weight: bold;
-}
-
-/* RIGHT COLUMN: The Retro Terminal Visual */
 .heroVisualBlock {
   display: flex;
   align-items: center;
@@ -66,24 +38,16 @@
   position: relative;
   border: 4px solid #ffffff;
   background: #000;
-  box-shadow: 8px 8px 0px var(--accent-pink); /* 8-bit offset shadow */
+  box-shadow: 12px 12px 0px var(--accent-pink);
   overflow: hidden;
   width: 100%;
-}
-
-.terminalHeader {
-  display: flex; 
-  justify-content: space-between;
-  background: #111; 
-  padding: 4px 8px; 
-  border-bottom: 2px solid #ffffff;
-  color: #fff; 
-  font-size: 0.7rem; 
-  font-family: monospace;
+  /* Terminal also gets a size boost */
+  min-height: 450px; 
 }
 
 .assetVisualArea {
-  min-height: 300px;
+  height: 100%;
+  min-height: 400px;
   background: #111;
   display: flex;
   align-items: center;
@@ -91,24 +55,21 @@
 }
 
 .devPhoto {
-  width: 100%; 
-  height: auto; 
-  display: block;
-  filter: grayscale(100%) contrast(150%); /* High-contrast retro processing */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Retro 8-bit image feel */
+  image-rendering: pixelated; 
+  filter: grayscale(1) contrast(1.2);
 }
 
-/* Attention-Grabbing Element: 8-bit Scanlines */
-.scanlines {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%;
-  background: repeating-linear-gradient(
-    rgba(255, 255, 255, 0.05), 
-    rgba(255, 255, 255, 0.05) 1px, 
-    transparent 1px, 
-    transparent 2px
-  );
-  pointer-events: none;
+/* Magician Archetype: The Glow Effects */
+.glowYellow { 
+  color: var(--accent-yellow); 
+  text-shadow: 0 0 20px rgba(241, 196, 15, 0.5); 
+}
+
+.glowPink { 
+  color: var(--accent-pink); 
+  text-shadow: 0 0 20px rgba(255, 0, 85, 0.5); 
 }
