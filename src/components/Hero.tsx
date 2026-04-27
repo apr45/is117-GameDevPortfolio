@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import styles from '../styles/Hero.module.css';
 
 const Hero: React.FC = () => {
@@ -6,20 +7,23 @@ const Hero: React.FC = () => {
     <section id="hero" className={styles.heroScene}>
       <div className={styles.heroGrid}>
         
-        {/* LEFT COLUMN: The Branding Statement */}
         <div className={styles.heroTextBlock}>
-          <h1 className={styles.heroHeadline}>
+          {/* Glitch Entrance for Headline */}
+          <motion.h1 
+            initial={{ skewX: 20, opacity: 0 }}
+            animate={{ skewX: 0, opacity: 1 }}
+            transition={{ duration: 0.5, type: "spring" }}
+            className={styles.heroHeadline}
+          >
             I BUILD <span className={styles.glowYellow}>SYSTEMS</span> <br/>
             AND <span className={styles.glowPink}>WORLDS</span>.
-          </h1>
-          {/* Subtext removed for a cleaner, high-impact look */}
+          </motion.h1>
         </div>
         
-        {/* RIGHT COLUMN: The Visual Terminal */}
         <div className={styles.heroVisualBlock}>
           <div className={styles.retroTerminalWindow}>
             <div className={styles.terminalHeader}>
-              <span>[SYSTEM_ANALYSIS.EXE]</span>
+              <span className={styles.typingText}>[SYSTEM_ANALYSIS.EXE]... RUNNING</span>
               <div className={styles.controlButtons}>_ [] X</div>
             </div>
             
@@ -29,6 +33,10 @@ const Hero: React.FC = () => {
                 alt="Developer Avatar"
                 className={styles.devPhoto}
               />
+              {/* THE SCANNER: Moving laser line */}
+              <div className={styles.scannerLine} />
+              {/* THE NOISE: Subtle static overlay */}
+              <div className={styles.staticOverlay} />
             </div>
             
             <div className={styles.scanlines} />
