@@ -25,13 +25,48 @@ const SceneWrapper = ({ children }: { children: React.ReactNode }) => {
   const smoothScale = useSpring(scale, { stiffness: 100, damping: 30 });
 
   return (
-    <motion.div 
-      ref={ref} 
-      style={{ opacity, scale: smoothScale }} 
-      className="step-wrapper"
-    >
-      {children}
-    </motion.div>
+  <motion.div 
+    ref={ref} 
+    style={{ 
+      opacity, 
+      scale: smoothScale,
+      position: 'relative', // Keep it relative to let the fixed HUD sit on top
+      zIndex: 1 
+    }} 
+    className="step-wrapper"
+  >
+    {children}
+  </motion.div>
+  );
+};
+
+const BackgroundDecor = () => {
+  return (
+    <div className="bg-pixel-layer">
+      {/* Generate 30 retro stars */}
+      {[...Array(30)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="retro-star"
+          animate={{
+            y: [-10, -1000], // Drifting upward
+            opacity: [0, 1, 1, 0],
+          }}
+          transition={{
+            duration: Math.random() * 20 + 10,
+            repeat: Infinity,
+            ease: "linear",
+            delay: Math.random() * -20,
+          }}
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `100%`,
+            width: i % 3 === 0 ? '4px' : '2px', // Varied pixel sizes
+            height: i % 3 === 0 ? '4px' : '2px',
+          }}
+        />
+      ))}
+    </div>
   );
 };
 
@@ -49,6 +84,8 @@ const App: React.FC = () => {
   return (
     <motion.div ref={containerRef} style={{ backgroundColor: bgColor }} className="scrolly-container">
 
+    <BackgroundDecor />
+     
       {/* 1. THE GLOBAL STICKY HEADER (Now using index.css classes) */}
       <header className="global-sticky-header">
         {">"} NJIT // <span className="blue-accent">IT</span> // <span className="green-accent">GAME DEV STUDENT</span>
