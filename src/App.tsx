@@ -30,10 +30,14 @@ const SceneWrapper = ({ children }: { children: React.ReactNode }) => {
     style={{ 
       opacity, 
       scale: smoothScale,
-      position: 'relative', // Keep it relative to let the fixed HUD sit on top
-      zIndex: 1 
-    }} 
-    className="step-wrapper"
+      position: 'relative',
+      // --- ADDED FOR CENTERING ---
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '100%',
+      minHeight: '100vh' // Ensures each section takes up the full view for centering
+    }}
   >
     {children}
   </motion.div>

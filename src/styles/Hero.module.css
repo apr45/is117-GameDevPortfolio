@@ -42,6 +42,7 @@
   justify-self: end; 
   width: 100%;
   max-width: 500px;
+  margin-top: 60 px;
 }
 
 .retroTerminalWindow {

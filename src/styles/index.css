@@ -64,26 +64,20 @@ body {
 }
 
 .sticky-stage {
-  position: fixed;
-  top: 0;
-  height: 100vh;
+  margin-left: 0 !important;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 9999; 
-  pointer-events: none;
+  justify-content: center;
 }
 
 .content-steps {
   position: relative;
   z-index: 2;
-  /* Remove any negative margins */
-  margin-top: 0; 
-  /* Add padding so the first scene starts visible below the header */
-  padding-top: 15vh; 
-  margin-left: 60px;
-  width: calc(100% - 60px);
+  width: 100%;
+  margin: 0 auto; /* Centers the container itself */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers children horizontally */
 }
 
 .step-wrapper {
