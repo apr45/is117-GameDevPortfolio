@@ -70,8 +70,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* Push the entire stage down so it starts below the 60px header */
+  justify-content: flex-start; 
+  padding-top: 80px; 
   z-index: 1;
+  pointer-events: none;
 }
 
 .content-steps {
@@ -93,28 +96,29 @@ body {
 }
 
 .hud-display {
-  position: fixed; /* Ensures it stays pinned even as scenes scroll */
-  top: 20px;
-  right: 20px;
+  /* Ensure the status box sits comfortably below the header and progress bar */
+  margin-top: 20px; 
+  align-self: flex-end; /* Keeps it on the right side if preferred */
+  margin-right: 5%;
+  pointer-events: auto;
   
-  /* Size Reduction */
-  padding: 8px 12px;
-  min-width: 120px;
-  font-size: 0.7rem; /* Smaller text for a compact 8-bit look */
-  
-  /* Layering Logic */
-  z-index: 9999; /* Forces it in front of all other scene layers */
-  
-  /* Visual Polish */
-  background: rgba(10, 10, 10, 0.9);
-  border: 2px solid #ffffff;
-  box-shadow: 4px 4px 0px var(--accent-pink);
-  pointer-events: none; /* Prevents the box from blocking clicks on scenes */
+  /* Maintain the 8-bit aesthetic */
+  background: rgba(26, 26, 26, 0.9);
+  border: var(--border-pixel);
+  box-shadow: 6px 6px 0px var(--accent-pink);
 }
 
 .hud-display h3 {
   margin: 4px 0 0 0;
   color: var(--accent-yellow);
+}
+
+.experience-bar-container {
+  width: 90%;
+  height: 10px;
+  background: #333;
+  margin-bottom: 10px;
+  border: 2px solid #fff;
 }
 
 /* --- GLOBAL STICKY HEADER (Sprint 3) --- */
