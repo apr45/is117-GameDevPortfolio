@@ -9,25 +9,25 @@
 }
 
 .sectionTitle {
-  width: 85%;
+  /* This width and margin ensure the title aligns with the XP bar */
+  width: 90%; 
   max-width: 1400px;
   margin-bottom: 2.5rem;
   font-family: var(--font-pixel);
-  color: var(--text-main);
   text-align: left;
 }
 
 .scrollContainer {
-  width: 100%;
+  /* EXPANDED: Now reaches almost to the end of the screen */
+  width: 95%; 
+  max-width: 1600px;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 2rem 0 4rem 0;
+  padding: 2rem 0;
   
-  /* Retro Scrollbar Styling */
+  /* Retro Scrollbar */
   scrollbar-width: thin;
   scrollbar-color: var(--accent-pink) transparent;
-  
-  /* Scroll Snap: This centers the card in the red-circled area automatically */
   scroll-snap-type: x mandatory;
 }
 
@@ -40,28 +40,32 @@
 }
 .scrollContainer::-webkit-scrollbar-thumb {
   background: var(--accent-pink);
-  border-radius: 0px; /* Sharp retro edges */
 }
 
 .projectTrack {
   display: inline-flex;
   gap: 3rem;
-  padding: 0 10vw; /* Gutter so the first/last items center properly */
+  /* ALIGN TO RIGHT: Matches the title's start position */
+  /* We use 2.5% to give a small buffer from the left edge */
+  padding-left: 2.5%; 
+  padding-right: 10vw; /* Buffer at the end so the last card isn't stuck */
 }
 
 .projectCard {
-  flex: 0 0 450px; /* Fixed width for cards */
+  flex: 0 0 450px;
   height: 320px;
   background: #111;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  scroll-snap-align: center; /* The card "magnets" to the center of the screen */
+  scroll-snap-align: start; /* Changed to 'start' to keep the left-alignment clean */
   transition: transform 0.3s ease;
+  border: var(--border-pixel);
 }
 
 .projectCard:hover {
   transform: translateY(-10px);
+  border-color: var(--accent-yellow);
 }
 
 .cardHeader {
