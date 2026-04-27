@@ -104,6 +104,31 @@ body {
   width: 100%;
 }
 
+/* --- PROJECTS-SPECIFIC ALIGNMENT OVERRIDE --- */
+
+/* Targets the wrapper containing the Projects section */
+.content-steps .step-wrapper:has(#projects) {
+  justify-content: center; /* Center the grid horizontally */
+  margin-left: 0;         /* Remove the 60px spine offset */
+  padding-right: 0;       /* Remove right-side buffer */
+  width: 100%;            /* Allow full-width centering */
+}
+
+/* Ensure the ProjectSlider internal alignment is centered */
+#projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Adjust the grid to ensure it centers its own items */
+#projects > div {
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px; /* Optional: keeps the grid from getting too wide */
+}
+
 .step-wrapper {
   /* Reduce this slightly so the scroll feels more responsive */
   min-height: 100vh; 
