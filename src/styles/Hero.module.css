@@ -22,28 +22,26 @@
 }
 
 .heroTextBlock {
-  /* Ensure the text stays hugged to the right side of its column */
-  justify-self: end; 
-  text-align: right;
-  padding-right: 1rem;
+  justify-self: start;
 }
 
 .heroHeadline {
   font-family: var(--font-pixel);
-  /* Adjusted font size slightly for better fitting in the narrower column */
-  font-size: 5rem; 
-  line-height: 0.95;
+  font-size: 5.5rem;
+  line-height: 1;
   text-transform: uppercase;
   color: var(--text-main);
   margin: 0;
+  /* Ensure no residual glitch animations are attached */
+  animation: none !important; 
 }
 
 .heroVisualBlock {
-  /* Ensure the terminal stays hugged to the left side of its column */
-  justify-self: start; 
+  /* FIX: This pulls the terminal window to the right edge of the grid */
+  justify-self: end; 
   width: 100%;
-  max-width: 480px; /* Slightly smaller to help with the "closeness" feel */
-  margin-top: 20px;
+  max-width: 500px;
+  margin-top: 60 px;
 }
 
 .retroTerminalWindow {
@@ -122,7 +120,13 @@
   overflow: hidden;
   border-right: 2px solid var(--accent-yellow);
   white-space: nowrap;
-  animation: typing 3s steps(25, end) infinite, blink 0.75s step-end infinite;
+  
+  /* FIX: instead of letting it take the full header width, 
+     it only takes the width of the characters */
+  width: max-content; 
+
+  /* Update the animation to use the specific width */
+  animation: typing 3s steps(30, end) infinite, blink 0.75s step-end infinite;
 }
 
 @keyframes typing {
