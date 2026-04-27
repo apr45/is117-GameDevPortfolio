@@ -67,13 +67,11 @@ body {
   position: fixed;
   top: 0;
   height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Push the entire stage down so it starts below the 60px header */
-  justify-content: flex-start; 
-  padding-top: 80px; 
-  z-index: 100; 
+  z-index: 9999; 
   pointer-events: none;
 }
 
@@ -125,13 +123,13 @@ body {
 /* --- Experience Bar Logic --- */
 .experience-tracker {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1400px;
   display: flex;
   align-items: center;
   gap: 15px;
   pointer-events: none;
   margin-top: 10px; /* Space below the header */
-  margin-left: 60px;
+  
 }
 
 .bar-label {
