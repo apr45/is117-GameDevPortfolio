@@ -1,4 +1,5 @@
 import React from 'react';
+// Modular CSS import prevents style bleeding
 import styles from '../styles/Hero.module.css';
 
 const Hero: React.FC = () => {
@@ -6,34 +7,43 @@ const Hero: React.FC = () => {
     <section id="hero" className={styles.heroScene}>
       <div className={styles.heroGrid}>
         
-        {/* LEFT COLUMN: Narrative Text (Jules Morrow Layout) */}
+        {/* LEFT COLUMN: Narrative & Title Structure */}
         <div className={styles.heroTextBlock}>
-          {/* Top small label - matching the exemplar hierarchy */}
           <p className={styles.heroLabel}>
-            {">"} NJIT // INFORMATION TECHNOLOGY // GAME DEV STUDENT
+            {">"} NJIT // IT // GAME DEV STUDENT
           </p>
           
-          {/* Main Headline - High-impact 8-bit text */}
+          {/* Main Headline - Activated as a big, bold TITLE */}
           <h1 className={styles.heroHeadline}>
             I BUILD ROBUST <span className={styles.glowYellow}>SYSTEMS</span> AND 
-            IMMERSIVE <span className={styles.glowPink}> WORLDS</span> FOR VIDEO GAMES.
+            IMMERSIVE <span className={styles.glowPink}> WORLDS</span>.
           </h1>
           
-          {/* Detailed Paragraph - Professional Narrative */}
           <p className={styles.heroSubtext}>
-            I am an IT student focusing on the part after the concept sprint: 
-            the <span className={styles.highlight}>physics engines</span>, 
-            <span className={styles.highlight}>component logic</span>, character <span className={styles.highlight}>state management</span>, 
-            and data architecture that make an interactive world hold together. 
-            My work sits between technical system infrastructure and compelling gameplay mechanics.
+            I am an IT student focusing on the part after the concept sprint...
           </p>
         </div>
         
-        {/* RIGHT COLUMN: Retro Visual Asset */}
+        {/* RIGHT COLUMN: Attention-Grabbing 8-bit Visual */}
         <div className={styles.heroVisualBlock}>
-          <div className={styles.retroVectorPlaceholder}>
-            {/* Visual Asset Placeholder */}
-            [RETRO_VECTOR_ASSET]
+          <div className={styles.retroTerminalWindow}>
+            {/* 1. Terminal HUD Element */}
+            <div className={styles.terminalHeader}>
+              <span>[SYSTEM_ANALYSIS.EXE]</span>
+              <div className={styles.controlButtons}>_ [] X</div>
+            </div>
+            
+            {/* 2. Imported Photo Placeholder (Jules Morrow layout style) */}
+            <div className={styles.assetVisualArea}>
+              <img 
+                src="/images/my-photo.webp" // <--- Import your photo path here
+                alt="Developer Avatar"
+                className={styles.devPhoto}
+              />
+            </div>
+            
+            {/* 3. 8-bit Scanline Overlay (The Magician's Touch) */}
+            <div className={styles.scanlines} />
           </div>
         </div>
 
