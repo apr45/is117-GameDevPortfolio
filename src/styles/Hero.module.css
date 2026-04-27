@@ -2,9 +2,12 @@
 .heroScene {
   height: 100vh;
   display: flex;
+  flex-direction: column; /* Stack the sticky header and grid vertically */
   align-items: center;
-  justify-content: center;
-  background-color: var(--bg-primary); /* Ensuring dark background */
+  /* Shift content slightly down to account for the sticky bar */
+  justify-content: flex-start;
+  padding-top: 10vh; 
+  background-color: var(--bg-primary);
 }
 
 .heroGrid {
@@ -21,6 +24,35 @@
   color: #666;
   text-transform: uppercase;
   margin-bottom: 1rem;
+}
+
+/* NEW: Architecture for the Sticky Header */
+.heroLabel.stickyHeader {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(0, 0, 0, 0.95); /* Semi-opaque black bar */
+  padding: 1rem 0;
+  z-index: 1000; /* Stays in front of all hero content */
+  
+  /* Final Aesthetics Check: High-contrast white text */
+  font-size: 0.8rem;
+  color: #fff; /* Increased from 666 grey to full white */
+  text-transform: uppercase;
+  font-family: var(--font-pixel); /* Monospace/Pixel font */
+  border-bottom: 2px solid var(--accent-pink); /* 8-bit underline effect */
+}
+
+/* Specific color highlights for the sticky header */
+.heroLabel .blue {
+  color: var(--accent-blue, #00ffff); /* Cyan/Blue */
+  text-shadow: 0 0 5px #00ffff;
+}
+
+.heroLabel .green {
+  color: var(--accent-green, #00ff00); /* Neon Green */
+  text-shadow: 0 0 5px #00ff00;
 }
 
 .heroHeadline {

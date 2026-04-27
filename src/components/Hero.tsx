@@ -5,14 +5,17 @@ import styles from '../styles/Hero.module.css';
 const Hero: React.FC = () => {
   return (
     <section id="hero" className={styles.heroScene}>
+
+        {/* GLOBAL STICKY HEADER (formerly heroLabel) */}
+      <div className={`${styles.heroLabel} ${styles.stickyHeader}`}>
+        {">"} NJIT // <span className={styles.blue}>IT</span> // <span className={styles.green}>GAME DEV STUDENT</span>
+      </div>
+      
       <div className={styles.heroGrid}>
         
         {/* LEFT COLUMN: Narrative & Title Structure */}
         <div className={styles.heroTextBlock}>
-          <p className={styles.heroLabel}>
-            {">"} NJIT // IT // GAME DEV STUDENT
-          </p>
-          
+        
           {/* Main Headline - Activated as a big, bold TITLE */}
           <h1 className={styles.heroHeadline}>
             I BUILD ROBUST <span className={styles.glowYellow}>SYSTEMS</span> AND 
