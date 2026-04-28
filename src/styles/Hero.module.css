@@ -77,26 +77,35 @@
 }
 
 .assetVisualArea {
-  position: relative; /* Context for the scanner's absolute positioning */
-  min-height: 500px;
+  position: relative;
+  /* Use aspect-ratio to keep it a perfect square */
+  width: 100%;
+  aspect-ratio: 1 / 1; 
   background: #111;
+  overflow: hidden; /* Important: clips the photo and scanner line */
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Important: Prevents the scanner from leaving the box */
 }
 
 .devPhoto {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* Fills the square without stretching */
-  display: block;      /* Removes bottom whitespace ghosting */
-  position: relative;
-  z-index: 1;          /* Keeps it behind the scanner line */
+  /* This property is the key: it crops the image to fill 
+     the square container without stretching. */
+  object-fit: cover; 
+  display: block;
   
-  /* Retro Filters - if these are too strong, try commenting them out first */
+  /* Move back behind scanlines and static */
+  z-index: 1; 
+  
+  /* Apply the retro filters */
   filter: grayscale(1) contrast(1.2);
-  image-rendering: pixelated; 
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+
+  /* 3. OPTIONAL: Reduce opacity slightly to let the 'static' show through */
+  opacity: 0.9;
 }
 
 /* Magician Archetype: The Glow Effects */
