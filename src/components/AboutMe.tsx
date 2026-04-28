@@ -6,19 +6,28 @@ const AboutMe: React.FC = () => {
     <section id="about" className={styles.aboutScene}>
       {/* Top Level Stats */}
       <div className={styles.statsGrid}>
-        <div className={styles.statCard}>
-          <span className={styles.statValue}>NJIT</span>
-          <p className={styles.statLabel}>Current IT Student specializing in Game Development</p>
-        </div>
-        <div className={styles.statCard}>
-          <span className={styles.statValue}>100%</span>
-          <p className={styles.statLabel}>Commitment to mastering game mechanics & physics</p>
-        </div>
-        <div className={styles.statCard}>
-          <span className={styles.statValue}>v2.0</span>
-          <p className={styles.statLabel}>Digital archive for Triadic Ballet reconstructions</p>
-        </div>
-      </div>
+    {/* All three top cards now use the same 'Item' design */}
+    <div className={styles.statCard}>
+      <div className={styles.rarityBadge}>TYPE: ID</div>
+      <span className={styles.itemHeader}>[STATION: NJIT]</span>
+      <span className={styles.statValue}>NJIT</span>
+      <p className={styles.statLabel}>Current IT Student specializing in Game Development</p>
+    </div>
+    
+    <div className={styles.statCard}>
+       <div className={styles.rarityBadge}>STAT: ATK</div>
+       <span className={styles.itemHeader}>[SKILL: PHYSICS]</span>
+       <span className={styles.statValue}>100%</span>
+       <p className={styles.statLabel}>Commitment to mastering game mechanics</p>
+    </div>
+
+    <div className={styles.statCard}>
+       <div className={styles.rarityBadge}>TYPE: ARCHIVE</div>
+       <span className={styles.itemHeader}>[PROJECT: BALLET]</span>
+       <span className={styles.statValue}>v2.0</span>
+       <p className={styles.statLabel}>Digital archive for Triadic Ballet reconstructions</p>
+    </div>
+  </div>
 
       <div className={styles.operatingModel}>
       {/* Standard Item Box */}

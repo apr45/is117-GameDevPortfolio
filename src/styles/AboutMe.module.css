@@ -16,14 +16,6 @@
   max-width: 1200px;
 }
 
-.statCard {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 1.5rem;
-  position: relative;
-}
-
 .statValue {
   font-family: var(--font-pixel);
   font-size: 3rem;
@@ -48,18 +40,38 @@
   max-width: 1200px;
 }
 
-.modelContainer {
+.statCard, 
+.modelContainer, 
+.facultyNote {
   position: relative;
   background: #111;
-  /* Double Border Effect */
+  /* 1. THE SOLID WHITE OUTLINE */
   border: 2px solid #ffffff;
-  outline: 4px solid #000;
+  /* This creates the 'filled' gap effect shown in your reference */
   box-shadow: 
-    0 0 0 6px #ffffff, 
-    16px 16px 0px rgba(255, 255, 255, 0.1); /* Subtle shadow for secondary items */
+    0 0 0 4px #000,   /* Black gap */
+    0 0 0 6px #fff;   /* Solid white outer fill */
   
   padding: 2rem;
+  margin: 10px;       /* Extra space so outlines don't touch */
   overflow: hidden;
+  z-index: 1;
+}
+
+.statCard::before,
+.modelContainer::before,
+.facultyNote::before {
+  content: " ";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  /* Fine horizontal scanlines */
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .modelGrid {
@@ -91,17 +103,10 @@
 }
 
 .facultyNote {
-  position: relative;
-  background: #111;
-  /* Double Border + Pink Glow */
-  border: 2px solid #ffffff;
-  outline: 4px solid #000;
   box-shadow: 
-    0 0 0 6px #ffffff, 
-    16px 16px 0px var(--accent-pink); /* The "Legendary" offset shadow */
-  
-  padding: 2rem;
-  overflow: hidden;
+    0 0 0 4px #000, 
+    0 0 0 6px #fff,
+    16px 16px 0px var(--accent-pink); /* Offset pink shadow for the 'Legendary' feel */
 }
 
 .quote {
@@ -112,25 +117,24 @@
   text-transform: uppercase;
 }
 
-.rarityBadge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 2px 8px;
-  font-family: monospace;
-  font-size: 0.6rem;
-  letter-spacing: 1px;
-  color: #fff;
-  z-index: 3;
-}
-
 .itemHeader {
   font-family: var(--font-pixel);
   color: var(--accent-yellow);
   font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   display: block;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 5px;
+}
+
+.rarityBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 2px 8px;
+  background: #000;
+  color: #fff;
+  font-family: monospace;
+  font-size: 0.6rem;
+  z-index: 3;
 }
