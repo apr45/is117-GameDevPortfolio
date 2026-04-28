@@ -209,18 +209,19 @@
   background-size: 60px 60px;
   background-repeat: repeat;
 
-  /* --- ADDED FOR FADING EFFECT --- */
-  /* This creates a solid center that fades to transparent at the edges */
-  mask-image: radial-gradient(
-    circle at center, 
-    rgba(0, 0, 0, 1) 20%, 
-    rgba(0, 0, 0, 0) 80%
+  /* --- LINEAR BOTTOM FADE --- */
+  /* This makes the top solid and fades to transparent at the bottom */
+  mask-image: linear-gradient(
+    to bottom, 
+    rgba(0, 0, 0, 1) 0%, 
+    rgba(0, 0, 0, 1) 60%, 
+    rgba(0, 0, 0, 0) 100%
   );
-  /* Ensures compatibility with Webkit browsers */
-  -webkit-mask-image: radial-gradient(
-    circle at center, 
-    rgba(0, 0, 0, 1) 20%, 
-    rgba(0, 0, 0, 0) 80%
+  -webkit-mask-image: linear-gradient(
+    to bottom, 
+    rgba(0, 0, 0, 1) 0%, 
+    rgba(0, 0, 0, 1) 60%, 
+    rgba(0, 0, 0, 0) 100%
   );
 }
 
