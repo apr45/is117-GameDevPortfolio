@@ -1,14 +1,15 @@
-.heroGrid {
-  display: grid;
-  /* 1. Adjusted ratio: Text column is now slightly narrower to pull the visual closer */
-  grid-template-columns: 1.2fr 1fr; 
-  /* 2. Reduced gap from 2rem to 1rem */
-  gap: 1rem; 
-  width: 95%; /* Increased width to allow elements to breathe near the edges */
-  max-width: 1300px;
-  align-items: center;
+.heroScene {
   position: relative;
-  z-index: 2;
+  /* Reduced from 120vh to 100vh to fit perfectly on one screen */
+  height: 100vh; 
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #050505;
+  overflow: hidden;
+  /* Adjust padding to ensure content doesn't feel cramped but removes the gap */
+  padding: 60px 0 20px 0; 
 }
 
 .heroGrid {
@@ -34,6 +35,7 @@
   margin: 0;
   /* Ensure no residual glitch animations are attached */
   animation: none !important; 
+  margin-left: 20px;
 }
 
 .heroVisualBlock {
@@ -42,6 +44,7 @@
   width: 100%;
   max-width: 500px;
   margin-top: 60 px;
+  margin-right: 20px;
 }
 
 .retroTerminalWindow {
@@ -115,23 +118,25 @@
 }
 
 /* --- THE TYPING HEADER --- */
+.typingWrapper {
+  display: flex;
+  flex: 1; /* Takes available space but allows content-based sizing */
+}
+
 .typingText {
   display: inline-block;
+  width: 0; /* Start at 0 */
   overflow: hidden;
-  border-right: 2px solid var(--accent-yellow);
   white-space: nowrap;
-  
-  /* FIX: instead of letting it take the full header width, 
-     it only takes the width of the characters */
-  width: max-content; 
-
-  /* Update the animation to use the specific width */
-  animation: typing 3s steps(30, end) infinite, blink 0.75s step-end infinite;
+  border-right: 2px solid var(--accent-yellow);
+  /* The animation will now stop exactly where the text ends */
+  animation: typing 3s steps(25) forwards; 
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from { width: 0; }
+  /* Using ch units (character width) is the most precise for pixel/mono fonts */
+  to { width: 22ch; } /* Match the number of characters in your string */
 }
 
 @keyframes blink {
