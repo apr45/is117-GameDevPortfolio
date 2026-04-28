@@ -44,7 +44,7 @@
   width: 100%;
   max-width: 500px;
   margin-top: 60 px;
-  margin-right: 20px;
+  margin-right: 30px;
 }
 
 .retroTerminalWindow {
@@ -130,13 +130,15 @@
   white-space: nowrap;
   border-right: 2px solid var(--accent-yellow);
   /* The animation will now stop exactly where the text ends */
-  animation: typing 3s steps(25) forwards; 
+  animation: 
+    typing 4s steps(30) infinite, 
+    blink 0.75s step-end infinite;
 }
 
 @keyframes typing {
   from { width: 0; }
   /* Using ch units (character width) is the most precise for pixel/mono fonts */
-  to { width: 22ch; } /* Match the number of characters in your string */
+  to { width: 25ch; } /* Match the number of characters in your string */
 }
 
 @keyframes blink {
