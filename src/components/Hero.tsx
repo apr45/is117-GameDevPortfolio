@@ -61,7 +61,8 @@ const Hero: React.FC = () => {
                 src="/images/Game Developer & Designer (1).png" 
                 alt="Developer Avatar"
                 className={styles.devPhoto}
-                
+                onLoad={() => console.log("Image loaded successfully")}
+                onError={(e) => console.error("Image failed to load:", e)}
               />
               <div className={styles.scannerLine} />
               <div className={styles.staticOverlay} />

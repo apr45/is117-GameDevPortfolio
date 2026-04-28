@@ -89,10 +89,14 @@
 .devPhoto {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  /* Retro 8-bit image feel */
-  image-rendering: pixelated; 
+  object-fit: cover;   /* Fills the square without stretching */
+  display: block;      /* Removes bottom whitespace ghosting */
+  position: relative;
+  z-index: 1;          /* Keeps it behind the scanner line */
+  
+  /* Retro Filters - if these are too strong, try commenting them out first */
   filter: grayscale(1) contrast(1.2);
+  image-rendering: pixelated; 
 }
 
 /* Magician Archetype: The Glow Effects */
