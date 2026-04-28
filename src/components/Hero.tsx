@@ -58,9 +58,10 @@ const Hero: React.FC = () => {
             
             <div className={styles.assetVisualArea}>
               <img 
-                src="../../public/images/Game Developer & Designer (1).png" 
+                src="/images/Game Developer & Designer (1).png" 
                 alt="Developer Avatar"
                 className={styles.devPhoto}
+                
               />
               <div className={styles.scannerLine} />
               <div className={styles.staticOverlay} />
