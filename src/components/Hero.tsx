@@ -35,11 +35,10 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className={styles.heroHeadline}
             >
-            Embark on an <span className={styles.glowYellow}>exciting journey</span> into game design and development, 
-            where I craft <span className={styles.glowPink}>interactive worlds</span> that captivate players with 
-            stunning visual aesthetics and bring <span className={styles.glowYellow}>game mechanics</span> to life, 
-            creating <span className={styles.glowPink}>immersive gameplay</span> experiences that draw players 
-            deep into the adventure.
+              Enter a journey into <span className={styles.glowYellow}>game design</span> and development, 
+              where I build <span className={styles.glowPink}>aesthetic worlds</span> and program 
+              interactive mechanics, allowing players to dive into 
+            <span className={styles.glowYellow}> immersive gameplay</span> experiences.
           </motion.h1>
         </div>
         

@@ -30,14 +30,14 @@
   padding-right: 1.5rem;
   position: relative;
   z-index: 10; 
-  margin-right: -60px; /* Increased overlap for the longer text */
-  max-width: 700px; /* Prevents the paragraph from getting too wide */
+  margin-right: -50px; 
+  max-width: 650px;
 }
 
 .heroHeadline {
   font-family: var(--font-pixel);
   /* Reduced size for paragraph length while maintaining impact */
-  font-size: 2.2rem; 
+  font-size: 2.5rem; 
   line-height: 1.2;
   text-transform: uppercase;
   color: var(--text-main);
