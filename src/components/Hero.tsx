@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
             
             <div className={styles.assetVisualArea}>
               <img 
-                src="/images/Game Developer & Designer (1).png" 
+                src="./images/test.png" 
                 alt="Developer Avatar"
                 className={styles.devPhoto}
                 onLoad={() => console.log("Image loaded successfully")}
