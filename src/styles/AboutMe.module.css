@@ -49,10 +49,17 @@
 }
 
 .modelContainer {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
+  position: relative;
+  background: #111;
+  /* Double Border Effect */
+  border: 2px solid #ffffff;
+  outline: 4px solid #000;
+  box-shadow: 
+    0 0 0 6px #ffffff, 
+    16px 16px 0px rgba(255, 255, 255, 0.1); /* Subtle shadow for secondary items */
+  
   padding: 2rem;
+  overflow: hidden;
 }
 
 .modelGrid {
@@ -84,10 +91,17 @@
 }
 
 .facultyNote {
-  background: rgba(255, 0, 85, 0.05); /* Tinted with your accent pink */
-  border: 1px solid var(--accent-pink);
-  border-radius: 20px;
+  position: relative;
+  background: #111;
+  /* Double Border + Pink Glow */
+  border: 2px solid #ffffff;
+  outline: 4px solid #000;
+  box-shadow: 
+    0 0 0 6px #ffffff, 
+    16px 16px 0px var(--accent-pink); /* The "Legendary" offset shadow */
+  
   padding: 2rem;
+  overflow: hidden;
 }
 
 .quote {
@@ -96,4 +110,27 @@
   color: #fff;
   line-height: 1.3;
   text-transform: uppercase;
+}
+
+.rarityBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 2px 8px;
+  font-family: monospace;
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  color: #fff;
+  z-index: 3;
+}
+
+.itemHeader {
+  font-family: var(--font-pixel);
+  color: var(--accent-yellow);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  display: block;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 5px;
 }

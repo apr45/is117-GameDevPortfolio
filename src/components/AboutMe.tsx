@@ -21,31 +21,32 @@ const AboutMe: React.FC = () => {
       </div>
 
       <div className={styles.operatingModel}>
-        {/* Development Philosophy */}
+      {/* Standard Item Box */}
         <div className={styles.modelContainer}>
-          <span className={styles.statLabel}>OPERATING_LOG.SYS</span>
+          <div className={styles.rarityBadge}>TYPE: SYSTEM_LOG</div>
+          <span className={styles.itemHeader}>[ITEM: DEVELOPMENT_CORE]</span>
+    
           <div className={styles.modelGrid}>
             <div className={styles.pillarCard}>
               <h3 className={styles.pillarTitle}>MASTER MECHANICS</h3>
-              <p className={styles.pillarText}>I focus on the underlying physics that make worlds feel real.</p>
+              <p className={styles.pillarText}>Mastering physics-based character persistence.</p>
             </div>
-            <div className={styles.pillarCard}>
-              <h3 className={styles.pillarTitle}>PROTOTYPE EARLY</h3>
-              <p className={styles.pillarText}>Finding the "fun" through rapid iteration of core gameplay loops.</p>
-            </div>
-            <div className={styles.pillarCard}>
-              <h3 className={styles.pillarTitle}>AESTHETIC SYNC</h3>
-              <p className={styles.pillarText}>Matching technical logic with stunning visual aesthetics.</p>
-            </div>
+            {/* ... other pillarCards ... */}
           </div>
         </div>
 
-        {/* The "Note" or Philosophy callout */}
+        {/* Legendary Item Box */}
         <div className={styles.facultyNote}>
-          <span className={styles.statLabel}>CORE_MISSION</span>
+          <div className={styles.rarityBadge}>RARITY: LEGENDARY</div>
+          <span className={styles.itemHeader}>[MISSION: IMMERSIVE_UX]</span>
+    
           <p className={styles.quote}>
-            "BUILDING SYSTEMS THAT DON'T JUST WORK, BUT DRAW PLAYERS DEEP INTO THE ADVENTURE."
+            "BUILDING SYSTEMS THAT DRAW PLAYERS DEEP INTO THE ADVENTURE."
           </p>
+    
+          <div className={styles.terminalTags} style={{ marginTop: '20px', color: 'var(--accent-pink)', fontSize: '0.7rem' }}>
+            <span>#UNITY</span> <span>#C#</span> <span>#PHYSICS</span>
+          </div>
         </div>
       </div>
     </section>
