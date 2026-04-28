@@ -29,15 +29,17 @@ const Hero: React.FC = () => {
       {/* --- CONTENT LAYER --- */}
       <div className={styles.heroGrid}>
         <div className={styles.heroTextBlock}>
-          {/* Simple Fade-In Entrance (No Glitch/Skew) */}
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className={styles.heroHeadline}
-          >
-            I BUILD <span className={styles.glowYellow}>SYSTEMS</span> <br/>
-            AND <span className={styles.glowPink}>WORLDS</span>.
+            >
+            Embark on an <span className={styles.glowYellow}>exciting journey</span> into game design and development, 
+            where I craft <span className={styles.glowPink}>interactive worlds</span> that captivate players with 
+            stunning visual aesthetics and bring <span className={styles.glowYellow}>game mechanics</span> to life, 
+            creating <span className={styles.glowPink}>immersive gameplay</span> experiences that draw players 
+            deep into the adventure.
           </motion.h1>
         </div>
         

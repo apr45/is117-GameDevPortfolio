@@ -27,27 +27,21 @@
 .heroTextBlock {
   justify-self: end;
   text-align: left;
-  padding-right: 1rem;
-  
-  /* 1. LAYER DEPTH: High z-index ensures text stays OVER the grid */
+  padding-right: 1.5rem;
   position: relative;
   z-index: 10; 
-  
-  /* 2. OVERLAP: Pulls the text block slightly into the grid area */
-  margin-right: -40px; 
+  margin-right: -60px; /* Increased overlap for the longer text */
+  max-width: 700px; /* Prevents the paragraph from getting too wide */
 }
 
 .heroHeadline {
   font-family: var(--font-pixel);
-  /* 3. EXTEND LENGTH: Increased size and added letter-spacing */
-  font-size: 6rem; 
-  letter-spacing: -1px;
-  line-height: 0.9;
+  /* Reduced size for paragraph length while maintaining impact */
+  font-size: 2.2rem; 
+  line-height: 1.2;
   text-transform: uppercase;
   color: var(--text-main);
   margin: 0;
-  
-  /* 4. SHARPNESS: Ensures the white text pops against the pink grid */
   text-shadow: 2px 2px 0px #000; 
 }
 
@@ -84,7 +78,7 @@
 
 .assetVisualArea {
   position: relative; /* Context for the scanner's absolute positioning */
-  min-height: 400px;
+  min-height: 500px;
   background: #111;
   display: flex;
   align-items: center;
