@@ -12,12 +12,16 @@ const Hero: React.FC = () => {
         <div className={styles.gridFloor} />
 
         <div className={styles.dataPulseContainer}>
-          {[...Array(4)].map((_, i) => (
-            <div 
-              key={i} 
-              className={styles.pulseLine} 
-              style={{ left: `${20 + i * 20}%`, animationDelay: `${i * 0.8}s` }} 
-            />
+          {[...Array(5)].map((_, i) => (
+          <div 
+            key={i} 
+            className={styles.pulseLine} 
+            style={{ 
+            left: `${15 + i * 20}%`, 
+            animationDelay: `${i * 1.2}s`,
+            opacity: 0.4 /* Subtle transparency */
+          }} 
+          />
           ))}
         </div>
       </div>
