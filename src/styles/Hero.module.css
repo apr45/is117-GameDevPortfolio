@@ -6,7 +6,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #050505;
   overflow: hidden;
   /* Adjust padding to ensure content doesn't feel cramped but removes the gap */
   padding: 60px 0 20px 0; 
@@ -22,6 +21,7 @@
   position: relative;
   /* Higher z-index than the pulse container */
   z-index: 5; 
+  margin-bottom: 15%;
 }
 
 .heroTextBlock {
