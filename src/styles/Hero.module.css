@@ -21,7 +21,7 @@
   position: relative;
   /* Higher z-index than the pulse container */
   z-index: 5; 
-  margin-bottom: 15%;
+  margin-bottom: 10%;
 }
 
 .heroTextBlock {
@@ -204,8 +204,8 @@
   height: 100%;
   
   background-image: 
-    linear-gradient(rgba(255, 0, 85, 0.15) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(255, 0, 85, 0.15) 2px, transparent 2px);
+    linear-gradient(rgba(255, 0, 85, 0.15) 3px, transparent 3px),
+    linear-gradient(90deg, rgba(255, 0, 85, 0.15) 3px, transparent 3px);
   background-size: 60px 60px;
   background-repeat: repeat;
 
