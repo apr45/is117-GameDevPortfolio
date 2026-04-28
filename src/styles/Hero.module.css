@@ -84,7 +84,7 @@
 
 .assetVisualArea {
   position: relative; /* Context for the scanner's absolute positioning */
-  min-height: 300px;
+  min-height: 400px;
   background: #111;
   display: flex;
   align-items: center;
