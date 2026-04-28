@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
             
             <div className={styles.assetVisualArea}>
               <img 
-                src="/images/my-photo.webp" 
+                src="../../public/images/Game Develop & Designer (1).png" 
                 alt="Developer Avatar"
                 className={styles.devPhoto}
               />
