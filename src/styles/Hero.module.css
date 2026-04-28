@@ -83,12 +83,13 @@
 }
 
 .assetVisualArea {
-  height: 100%;
-  min-height: 400px;
+  position: relative; /* Context for the scanner's absolute positioning */
+  min-height: 300px;
   background: #111;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* Important: Prevents the scanner from leaving the box */
 }
 
 .devPhoto {
@@ -119,9 +120,9 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: var(--accent-pink);
-  box-shadow: 0 0 15px var(--accent-pink);
-  z-index: 5;
+  background: var(--accent-yellow); /* Already yellow as requested */
+  box-shadow: 0 0 15px var(--accent-yellow);
+  z-index: 5; /* Lower than the header (10) but higher than the photo */
   opacity: 0.6;
   animation: scan 3s linear infinite;
 }
