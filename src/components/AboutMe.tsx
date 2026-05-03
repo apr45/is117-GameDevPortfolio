@@ -26,43 +26,46 @@ const AboutMe: React.FC = () => {
           </p>
         </div>
 
-        {/* 
-          BOX 2: PROGRAMMING STACK (Wide Card)
-          This container now spans both columns.
-        */}
-        <div className={`${styles.statCard} ${styles.wideItem}`}>
-          <div className={styles.rarityBadge}>STAT: INT</div>
-          <span className={styles.itemHeader}>[SKILL: CORE_LOGIC]</span>
-          
-          <div className={styles.modelGrid}>
-            
-            {/* SUB-ITEM 1: PYTHON */}
-            <div className={styles.pillarCard}>
-              <h3 className={styles.pillarTitle}>1. PYTHON</h3>
-              <p className={styles.pillarText}>
-                Mastery of data structures and automation. Used for physics-based persistence systems[cite: 2].
-              </p>
-            </div>
-
-            {/* SUB-ITEM 2: JAVA */}
-            <div className={styles.pillarCard}>
-              <h3 className={styles.pillarTitle}>2. JAVA</h3>
-              <p className={styles.pillarText}>
-                Strong object-oriented architecture and system design[cite: 2].
-              </p>
-            </div>
-
-            {/* SUB-ITEM 3: C# UNITY */}
-            <div className={styles.pillarCard}>
-              <h3 className={styles.pillarTitle}>3. C# (UNITY)</h3>
-              <p className={styles.pillarText}>
-                Primary language for developing robust gameplay mechanics within the Unity Engine[cite: 1, 2].
-              </p>
-            </div>
-
-          </div>
+        {/* BOX 2: PROGRAMMING STACK (Wide Card) */}
+<div className={`${styles.statCard} ${styles.wideItem}`}>
+  <div className={styles.rarityBadge}>STAT: INT</div>
+  <span className={styles.itemHeader}>[SKILL: CORE_LOGIC]</span>
+  
+  <div className={styles.modelGrid}>
+    {/* SUB-ITEM: PYTHON */}
+    <div className={styles.pillarCard}>
+      <div className={styles.chartContainer}>
+        <div className={`${styles.circle} ${styles.pythonChart}`}>
+          <span className={styles.percentageText}>85%</span>
         </div>
+      </div>
+      <h3 className={styles.pillarTitle}>PYTHON</h3>
+      <p className={styles.pillarText}>Data structures and system automation[cite: 2].</p>
+    </div>
 
+    {/* SUB-ITEM: JAVA */}
+    <div className={styles.pillarCard}>
+      <div className={styles.chartContainer}>
+        <div className={`${styles.circle} ${styles.javaChart}`}>
+          <span className={styles.percentageText}>75%</span>
+        </div>
+      </div>
+      <h3 className={styles.pillarTitle}>JAVA</h3>
+      <p className={styles.pillarText}>Object-oriented architecture and design[cite: 2].</p>
+    </div>
+
+    {/* SUB-ITEM: C# (UNITY) */}
+    <div className={styles.pillarCard}>
+      <div className={styles.chartContainer}>
+        <div className={`${styles.circle} ${styles.unityChart}`}>
+          <span className={styles.percentageText}>95%</span>
+        </div>
+      </div>
+      <h3 className={styles.pillarTitle}>C# (UNITY)</h3>
+      <p className={styles.pillarText}>Gameplay mechanics and Unity engine development[cite: 8].</p>
+    </div>
+  </div>
+</div>
         {/* BOX 4: FUTURE OUTLOOK (Legendary Box - Standard Card) */}
         <div className={`${styles.statCard} ${styles.facultyNote}`}>
           <div className={styles.rarityBadge}>RARITY: MYTHIC</div>
