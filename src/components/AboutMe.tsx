@@ -24,33 +24,33 @@ const AboutMe: React.FC = () => {
     <div className={styles.pillarCard}>
       <div className={styles.chartContainer}>
         <div className={`${styles.circleSmall} ${styles.pythonChart}`}>
-          <span className={styles.percentageText}>85%</span>
+          <span className={styles.percentageText}>70%</span>
         </div>
       </div>
       <h3 className={styles.pillarTitle}>1. PYTHON</h3>
-      <p className={styles.pillarText}>System automation & data structures.</p>
+      <p className={styles.pillarText}>Mastering basic syntax and logic to engineer simple yet efficient scripts.</p>
     </div>
 
     {/* JAVA */}
     <div className={styles.pillarCard}>
       <div className={styles.chartContainer}>
         <div className={`${styles.circleSmall} ${styles.javaChart}`}>
-          <span className={styles.percentageText}>75%</span>
+          <span className={styles.percentageText}>85%</span>
         </div>
       </div>
       <h3 className={styles.pillarTitle}>2. JAVA</h3>
-      <p className={styles.pillarText}>Robust object-oriented design patterns.</p>
+      <p className={styles.pillarText}>Implementing advanced OOP concepts to architect robust client and server-side infrastructures.</p>
     </div>
 
     {/* C# (UNITY) */}
     <div className={styles.pillarCard}>
       <div className={styles.chartContainer}>
         <div className={`${styles.circleSmall} ${styles.unityChart}`}>
-          <span className={styles.percentageText}>95%</span>
+          <span className={styles.percentageText}>55%</span>
         </div>
       </div>
-      <h3 className={styles.pillarTitle}>3. C# (UNITY)</h3>
-      <p className={styles.pillarText}>Primary gameplay mechanics developer.</p>
+      <h3 className={styles.pillarTitle}>3. C#</h3>
+      <p className={styles.pillarText}>Ongoing learning process to develop complex game mechanics within the Unity engine.</p>
     </div>
   </div>
 </div>
@@ -85,9 +85,6 @@ const AboutMe: React.FC = () => {
           <p className={styles.statLabel}>
             Evolving interactive mechanics into modern, full-stack web ecosystems.
           </p>
-          <div className={styles.terminalTags} style={{ marginTop: '10px', color: 'var(--accent-pink)', fontSize: '0.7rem' }}>
-            <span>#MERN_STACK</span> <span>#INTEGRATION</span>
-          </div>
         </div>
 
       </div>

@@ -12,7 +12,8 @@
   grid-template-rows: repeat(2, 1fr);
   gap: 2rem;
   width: 100%; 
-  max-width: 1400px;
+  max-width: 1200px;
+  margin-left: 15%;
 }
 
 @keyframes float {
@@ -198,15 +199,6 @@
   margin-bottom: 1.5rem;
 }
 
-.terminalTags span {
-  display: inline-block;
-  margin-right: 8px;
-  padding: 2px 6px;
-  background: rgba(255, 0, 85, 0.1);
-  border: 1px solid var(--accent-pink);
-  border-radius: 4px;
-}
-
 /* Container for alignment */
 .chartContainer {
   display: flex;
@@ -227,9 +219,9 @@
 }
 
 /* Conic-gradients for the rings */
-.pythonChart { background: conic-gradient(var(--accent-pink) 85%, #222 0); }
-.javaChart   { background: conic-gradient(var(--accent-pink) 75%, #222 0); }
-.unityChart  { background: conic-gradient(var(--accent-pink) 95%, #222 0); }
+.pythonChart { background: conic-gradient(var(--accent-pink) 70%, #222 0); }
+.javaChart   { background: conic-gradient(var(--accent-pink) 85%, #222 0); }
+.unityChart  { background: conic-gradient(var(--accent-pink) 55%, #222 0); }
 
 /* Inner hole (Mask)[cite: 7] */
 .circleSmall::after {
