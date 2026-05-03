@@ -9,11 +9,16 @@
 
 .asymmetricGrid {
   display: grid;
+  /* Keep the 4-column structure but let it fill the screen */
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 2rem;
-  width: 100%; 
-  max-width: 1400px;
+  grid-template-rows: auto; /* Allow height to adjust based on content */
+  gap: 1.5rem; /* Slightly tighter gap for a cleaner dashboard look */
+  
+  /* FORCE FULL WIDTH */
+  width: 98vw; 
+  max-width: 100%; 
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 @keyframes float {
@@ -25,22 +30,18 @@
 /* Base style for all standard cards */
 .statCard {
   position: relative;
-  background: #111;
+  background: #0a0a0a;
   border: 2px solid #ffffff;
+  /* Double border effect */
   box-shadow: 
     0 0 0 4px #000, 
     0 0 0 6px #fff;
   
   padding: 2rem;
-  margin: 10px;
-  overflow: hidden;
-  z-index: 1;
-  
-  /* Apply the smooth float by default */
-  min-height: 250px;
+  /* Ensure boxes stretch equally in height */
+  height: 100%; 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   animation: float 4s ease-in-out infinite;
   transition: all 0.3s ease;
 }
@@ -116,9 +117,39 @@
 .modelGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 1rem;
-  flex: 1; /* Stretch to fill vertical space */
+  gap: 2rem;
+  width: 100%;
+  margin-top: auto; /* Pushes skills to the bottom of the card */
+}
+
+/* Specific layout for the 2-pillar hobby box */
+.modelGridHobbies {
+  display: grid;
+  /* Divide the space into 2 equal columns instead of 3 */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  flex: 1;
+}
+
+/* Ensure the cards within the 2-column grid stretch properly */
+.modelGridHobbies .pillarCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2rem; /* Increased padding since the cards are now wider */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Maintain the pink accent styling for the hobby headers[cite: 8] */
+.wideItem:nth-child(3) .pillarTitle {
+  color: var(--accent-pink); 
+  border-left: 2px solid var(--accent-pink);
+  padding-left: 10px;
+  margin-bottom: 1.5rem;
 }
 
 /* Vertical Sub-Items (Based on image reference[cite: 2]) */

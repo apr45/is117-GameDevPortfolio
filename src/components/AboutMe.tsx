@@ -55,11 +55,11 @@ const AboutMe: React.FC = () => {
   </div>
 </div>
 
-        {/* BOX 3: CREATIVE PATH (Wide - Bottom Left) */}
+{/* BOX 3: CREATIVE PATH (Wide - Bottom Left) */}
 <div className={`${styles.statCard} ${styles.wideItem}`}>
   <span className={styles.itemHeader}>[PATH: WORLD_BUILDING]</span>
   
-  <div className={styles.modelGrid}>
+  <div className={styles.modelGridHobbies}>
     {/* HOBBY 1: SCULPTING */}
     <div className={styles.pillarCard}>
       <h3 className={styles.pillarTitle}>1. SCULPTING</h3>
