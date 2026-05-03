@@ -38,7 +38,7 @@
 .heroHeadline {
   font-family: var(--font-pixel);
   /* Increased from 3.2rem to 3.8rem for maximum impact */
-  font-size: 3.2rem; 
+  font-size: 3.5rem; 
   /* Tightened line-height slightly for better grouping[cite: 6] */
   line-height: 1.05;
   text-transform: uppercase;

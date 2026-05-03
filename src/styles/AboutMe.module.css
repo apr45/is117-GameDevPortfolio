@@ -23,10 +23,16 @@
 
 .aboutGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2x2 Layout */
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
+}
+
+/* This makes the skills container wide[cite: 3] */
+.wideItem {
+  grid-column: span 2; /* Stretch across the grid */
+  min-height: 350px; /* Make it longer vertically[cite: 2] */
 }
 
 @keyframes float {
@@ -43,10 +49,6 @@
     0 0 0 4px #000, 
     0 0 0 6px #fff;
   padding: 2rem;
-  min-height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   animation: float 4s ease-in-out infinite;
   transition: all 0.3s ease;
 }
@@ -87,29 +89,36 @@
   cursor: pointer;
 }
 
+/* --- The Interior Grid for Python, Java, C# --- */
 .modelGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr); /* 3 Vertical Pillars[cite: 2] */
+  gap: 1.5rem;
   margin-top: 1.5rem;
+  flex: 1; /* Allow to expand vertically */
 }
 
+/* Vertical Sub-Items (Based on image reference[cite: 2]) */
 .pillarCard {
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 1.2rem;
+  background: rgba(0, 0, 0, 0.5); /* High contrast inside the wide box[cite: 2] */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px; /* Slight rounding for depth */
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Fill the vertical space */
 }
 
 .pillarTitle {
   font-family: var(--font-pixel);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #fff;
   margin-bottom: 1rem;
   text-transform: uppercase;
 }
 
 .pillarText {
+  font-family: monospace;
   font-size: 0.85rem;
   color: #aaa;
   line-height: 1.6;
