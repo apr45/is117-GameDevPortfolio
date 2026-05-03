@@ -21,7 +21,7 @@
   position: relative;
   /* Higher z-index than the pulse container */
   z-index: 5; 
-  margin-bottom: 9%;
+  margin-bottom: 8%;
 }
 
 .heroTextBlock {
@@ -37,7 +37,7 @@
 .heroHeadline {
   font-family: var(--font-pixel);
   /* Increased from 2.5rem to 3.2rem for more impact */
-  font-size: 3.2rem; 
+  font-size: 3.0 rem; 
   /* Adjusted line-height to accommodate larger text */
   line-height: 1.1;
   text-transform: uppercase;
@@ -270,7 +270,7 @@
   */
   90% {
     opacity: 0;
-    transform: translateY(90vh); 
+    transform: translateY(95vh); 
   }
   100% { 
     transform: translateY(100vh); 
