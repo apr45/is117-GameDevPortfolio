@@ -58,15 +58,21 @@
 }
 
 .projectCard {
-  flex: 0 0 650px;
-  height: 320px;
+  flex: 0 0 380px; /* Default width when not hovering */
+  height: 350px;
   background: #111;
   display: flex;
   flex-direction: row;
   border: var(--border-pixel);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+  position: relative;
+}
+
+.projectCard:hover {
+  flex: 0 0 700px; /* Expanded width on hover */
+  border-color: var(--accent-yellow);
 }
 
 /* 1. ELEMENTS HIDDEN BY DEFAULT */
@@ -74,13 +80,9 @@
 .techStack,
 .imageSide {
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
-}
-
-.projectCard:hover {
-  transform: translateY(-10px);
-  border-color: var(--accent-yellow);
+  transform: translateX(30px); /* Slides in from the right */
+  transition: all 0.4s ease;
+  pointer-events: none;
 }
 
 /* 2. THE HOVER TRIGGER: Reveal everything when card is hovered */
@@ -88,21 +90,20 @@
 .projectCard:hover .techStack,
 .projectCard:hover .imageSide {
   opacity: 1;
-  visibility: visible;
+  transform: translateX(0);
+  pointer-events: auto;
 }
 
 .cardHeader {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1rem;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  justify-content: center; /* Initial center alignment */
 }
 
-.rarityLabel {
-  font-size: 0.6rem;
-  background: #333;
-  padding: 2px 6px;
-  border: 1px solid #666;
+.projectCard:hover .cardHeader {
+  justify-content: flex-start; /* Shift header to left */
 }
 
 .techStack {
@@ -112,10 +113,17 @@
 }
 
 .contentSide {
-  flex: 1; /* Takes up remaining space[cite: 9] */
-  padding: 1.5rem;
+  flex: 1;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
+  justify-content: center; /* Centers title/status initially */
+  align-items: center;    /* Centers title/status initially */
+  transition: all 0.5s ease;
+}
+
+.projectCard:hover .contentSide {
+  align-items: flex-start; /* Shifts to left on hover */
   justify-content: space-between;
 }
 
@@ -159,4 +167,24 @@
   background-size: 100% 4px;
   z-index: 2;
   pointer-events: none;
+}
+
+/* Ensure the Title looks centered when the card is small */
+.pillarTitle {
+  color: var(--accent-yellow);
+  font-size: 1.4rem;
+  margin: 0;
+  transition: all 0.5s ease;
+}
+
+.projectCard:hover .pillarTitle {
+  text-align: left;
+}
+
+.statusLabel {
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  color: var(--accent-pink);
+  display: block;
+  margin-top: 5px;
 }

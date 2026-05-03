@@ -9,14 +9,18 @@ const ProjectSlider: React.FC = () => {
       <div className={styles.scrollContainer}>
         <div className={styles.projectTrack}>
           
-          {/* Project Item 1: Physics Engine */}
+          {/* Project 1: Physics Engine */}
           <div className={`${styles.projectCard} pixel-border`}>
             <div className={styles.contentSide}>
               <div className={styles.cardHeader}>
-                <h3 style={{ color: 'var(--accent-yellow)' }}>[ITEM: Physics Engine]</h3>
-                <span className={styles.rarityLabel}>RARITY: LEGENDARY</span>
+                <div className={styles.headerMain}>
+                  <h3 className={styles.pillarTitle}>[ITEM: Physics Engine]</h3>
+                  <span className={styles.statusLabel}>STATUS: COMPLETE</span>
+                </div>
               </div>
-              <p className={styles.projectDesc}>Implemented custom Rigidbody dynamics for character persistence and state management[cite: 8].</p>
+              <p className={styles.projectDesc}>
+                Implemented custom Rigidbody dynamics for character persistence and state management.
+              </p>
               <div className={styles.techStack}>#UNITY #C# #PHYSICS</div>
             </div>
             <div className={styles.imageSide}>
@@ -26,14 +30,18 @@ const ProjectSlider: React.FC = () => {
             </div>
           </div>
 
-          {/* Project Item 2: Java Mafia */}
+          {/* Project 2: Java Mafia */}
           <div className={`${styles.projectCard} pixel-border`}>
             <div className={styles.contentSide}>
               <div className={styles.cardHeader}>
-                <h3 style={{ color: 'var(--accent-pink)' }}>[ITEM: Java Mafia]</h3>
-                <span className={styles.rarityLabel}>RARITY: RARE</span>
+                <div className={styles.headerMain}>
+                  <h3 className={styles.pillarTitle} style={{ color: 'var(--accent-pink)' }}>[ITEM: Java Mafia]</h3>
+                  <span className={styles.statusLabel}>STATUS: COMPLETE</span>
+                </div>
               </div>
-              <p className={styles.projectDesc}>Multi-threaded networking architecture for real-time role-assignment and game logic[cite: 8].</p>
+              <p className={styles.projectDesc}>
+                Multi-threaded networking architecture for real-time role-assignment and game logic.
+              </p>
               <div className={styles.techStack}>#JAVA #NETWORKING #THREADS</div>
             </div>
             <div className={styles.imageSide}>
@@ -43,14 +51,18 @@ const ProjectSlider: React.FC = () => {
             </div>
           </div>
 
-          {/* Project Item 3: BauHaus Museum */}
+          {/* Project 3: Bauhaus Digital */}
           <div className={`${styles.projectCard} pixel-border`}>
             <div className={styles.contentSide}>
               <div className={styles.cardHeader}>
-                <h1 style={{ color: 'var(--accent-yellow)', fontSize: '1.2rem' }}>[ITEM: BAUHAUS_DIGITAL]</h1>
-                <span className={styles.rarityLabel}>RARITY: EPIC</span>
+                <div className={styles.headerMain}>
+                  <h3 className={styles.pillarTitle}>[ITEM: BAUHAUS_DIGITAL]</h3>
+                  <span className={styles.statusLabel}>STATUS: ONGOING</span>
+                </div>
               </div>
-              <p className={styles.projectDesc}>Digital reconstruction of Schlemmer's Triadic Ballet using minimalist geometric design[cite: 8].</p>
+              <p className={styles.projectDesc}>
+                Digital reconstruction of Schlemmer's Triadic Ballet using minimalist geometric design.
+              </p>
               <div className={styles.techStack}>#WEB #DESIGN #BAUHAUS</div>
             </div>
             <div className={styles.imageSide}>
