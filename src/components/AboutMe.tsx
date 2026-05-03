@@ -8,7 +8,6 @@ const AboutMe: React.FC = () => {
         
         {/* BOX 1: NJIT STATUS (Narrow - Top Left) */}
         <div className={styles.statCard}>
-          <div className={styles.rarityBadge}>STATUS: ACTIVE</div>
           <span className={styles.itemHeader}>[STATION: NJIT]</span>
           <span className={styles.statValue}>IT MAJOR</span>
           <p className={styles.statLabel}>
@@ -18,7 +17,6 @@ const AboutMe: React.FC = () => {
 
         {/* BOX 2: PROGRAMMING TOOLKIT (Wide - Top Right) */}
 <div className={`${styles.statCard} ${styles.wideItem}`}>
-  <div className={styles.rarityBadge}>STAT: INT</div>
   <span className={styles.itemHeader}>[SKILL: CORE_LOGIC]</span>
   
   <div className={styles.modelGrid}>
@@ -59,7 +57,6 @@ const AboutMe: React.FC = () => {
 
         {/* BOX 3: CREATIVE PATH (Wide - Bottom Left) */}
 <div className={`${styles.statCard} ${styles.wideItem}`}>
-  <div className={styles.rarityBadge}>TYPE: ARTISAN</div>
   <span className={styles.itemHeader}>[PATH: WORLD_BUILDING]</span>
   
   <div className={styles.modelGrid}>
@@ -91,7 +88,6 @@ const AboutMe: React.FC = () => {
 
         {/* BOX 4: WEB DEV GOALS (Narrow - Bottom Right) */}
         <div className={styles.statCard}>
-          <div className={styles.rarityBadge}>RARITY: LEGENDARY</div>
           <span className={styles.itemHeader}>[MISSION: WEB_EXPANSION]</span>
           <span className={styles.statValue}>WEB_DEV</span>
           <p className={styles.statLabel}>

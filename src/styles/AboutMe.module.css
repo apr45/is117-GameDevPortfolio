@@ -31,14 +31,19 @@
   box-shadow: 
     0 0 0 4px #000, 
     0 0 0 6px #fff;
-  padding: 2.5rem;
-  min-height: 350px; /* Increased height to give the grid more presence */
+  
+  padding: 2rem;
+  margin: 10px;
+  overflow: hidden;
+  z-index: 1;
+  
+  /* Apply the smooth float by default */
+  min-height: 250px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Keeps headers at top and content at bottom */
+  justify-content: center;
   animation: float 4s ease-in-out infinite;
   transition: all 0.3s ease;
-  overflow: hidden;
 }
 
 @keyframes scrollLines {
@@ -170,21 +175,6 @@
   color: var(--accent-pink); /* Use your secondary theme color here[cite: 8] */
   border-left: 2px solid var(--accent-pink);
   padding-left: 8px;
-}
-
-/* --- Rarity Badge --- */
-.rarityBadge {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  padding: 4px 10px;
-  background: #000;
-  color: #fff;
-  font-family: monospace;
-  font-size: 0.65rem;
-  letter-spacing: 1.5px;
-  z-index: 3;
 }
 
 .terminalTags span {
