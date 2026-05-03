@@ -1,22 +1,28 @@
 .aboutScene {
-  padding: 80px 2rem;
+  padding: 100px 0;
   width: 100%;
   min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Allows vertical stacking if needed */
-  justify-content: center; /* Vertical Center */
-  align-items: center;    /* Horizontal Center */
+  /* Crucial: ensures children are centered horizontally and vertically */
+  justify-content: center; 
+  align-items: center;
+  background: #000;
   overflow: hidden;
-  margin-left: 15%;
+  position: relative;
 }
 
 .asymmetricGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 3rem;
-  width: 90vw; /* Keeps it wide but centered within the scene */
+  gap: 2.5rem; /* Slightly larger gap for better visual balance */
+  
+  /* Use a percentage width and 'auto' margins to ensure perfect centering */
+  width: 90%; 
   max-width: 1400px;
+  margin: 0 auto; 
+  
+  z-index: 5;
 }
 
 @keyframes float {
@@ -39,6 +45,8 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  /* Ensures cards don't collapse if content is short */
+  min-height: 100%; 
 }
 
 @keyframes scrollLines {
