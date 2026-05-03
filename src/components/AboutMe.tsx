@@ -4,55 +4,66 @@ import styles from '../styles/AboutMe.module.css';
 const AboutMe: React.FC = () => {
   return (
     <section id="about" className={styles.aboutScene}>
-  <div className={styles.aboutGrid}>
-    
-    {/* BOX 1: NJIT STATUS */}
-    <div className={styles.statCard}>
-      <div className={styles.rarityBadge}>STATUS: ACTIVE</div>
-      <span className={styles.itemHeader}>[STATION: NJIT]</span>
-      <span className={styles.statValue}>IT MAJOR</span>
-      <p className={styles.statLabel}>Specializing in Game Development at NJIT.</p>
-    </div>
+      <div className={styles.asymmetricGrid}>
+        
+        {/* BOX 1: NJIT STATUS (Narrow - Top Left) */}
+        <div className={styles.statCard}>
+          <div className={styles.rarityBadge}>STATUS: ACTIVE</div>
+          <span className={styles.itemHeader}>[STATION: NJIT]</span>
+          <span className={styles.statValue}>IT MAJOR</span>
+          <p className={styles.statLabel}>
+            Specializing in Game Development. Crafting the technical bridge between systems and player experience.
+          </p>
+        </div>
 
-    {/* BOX 2: PROGRAMMING TOOLKIT (Now standard size) */}
-    <div className={styles.statCard}>
-      <div className={styles.rarityBadge}>STAT: INT</div>
-      <span className={styles.itemHeader}>[SKILL: CORE_LOGIC]</span>
-      
-      {/* Changed to a vertical stack for a narrower box */}
-      <div className={styles.verticalStack}>
-        <div className={styles.skillRow}>
-          <div className={`${styles.circleSmall} ${styles.pythonChart}`}>85%</div>
-          <span>PYTHON</span>
+        {/* BOX 2: PROGRAMMING TOOLKIT (Wide - Top Right) */}
+        <div className={`${styles.statCard} ${styles.wideItem}`}>
+          <div className={styles.rarityBadge}>STAT: INT</div>
+          <span className={styles.itemHeader}>[SKILL: CORE_LOGIC]</span>
+          
+          <div className={styles.modelGrid}>
+            <div className={styles.pillarCard}>
+              <h3 className={styles.pillarTitle}>1. PYTHON</h3>
+              <p className={styles.pillarText}>System automation & data structures.</p>
+            </div>
+            <div className={styles.pillarCard}>
+              <h3 className={styles.pillarTitle}>2. JAVA</h3>
+              <p className={styles.pillarText}>Robust object-oriented design patterns.</p>
+            </div>
+            <div className={styles.pillarCard}>
+              <h3 className={styles.pillarTitle}>3. C# (UNITY)</h3>
+              <p className={styles.pillarText}>Primary gameplay mechanics developer.</p>
+            </div>
+          </div>
         </div>
-        <div className={styles.skillRow}>
-          <div className={`${styles.circleSmall} ${styles.javaChart}`}>75%</div>
-          <span>JAVA</span>
+
+        {/* BOX 3: CREATIVE PATH (Wide - Bottom Left) */}
+        <div className={`${styles.statCard} ${styles.wideItem}`}>
+          <div className={styles.rarityBadge}>TYPE: ARTISAN</div>
+          <span className={styles.itemHeader}>[PATH: WORLD_BUILDING]</span>
+          <p className={styles.quote}>
+            SCULPTING & GRAPHIC DESIGN
+          </p>
+          <p className={styles.statLabel}>
+            Visualizing aesthetic environments and tangible assets to build deeper gameplay immersion.
+          </p>
         </div>
-        <div className={styles.skillRow}>
-          <div className={`${styles.circleSmall} ${styles.unityChart}`}>95%</div>
-          <span>C# (UNITY)</span>
+
+        {/* BOX 4: WEB DEV GOALS (Narrow - Bottom Right - LEGENDARY BOX) */}
+        <div className={`${styles.statCard} ${styles.facultyNote}`}>
+          <div className={styles.rarityBadge}>RARITY: LEGENDARY</div>
+          <span className={styles.itemHeader}>[MISSION: WEB_EXPANSION]</span>
+          <span className={styles.statValue}>WEB_DEV</span>
+          <p className={styles.statLabel}>
+            Evolving interactive mechanics into modern, full-stack web ecosystems.
+          </p>
+          <div className={styles.terminalTags} style={{ marginTop: '10px', color: 'var(--accent-pink)', fontSize: '0.7rem' }}>
+            <span>#MERN_STACK</span> <span>#INTEGRATION</span>
+          </div>
         </div>
+
       </div>
-    </div>
-
-    {/* BOX 3: CREATIVE HOBBIES */}
-    <div className={styles.statCard}>
-      <div className={styles.rarityBadge}>TYPE: ARTISAN</div>
-      <span className={styles.itemHeader}>[PATH: WORLD_BUILDING]</span>
-      <span className={styles.statValue}>CREATIVE</span>
-      <p className={styles.statLabel}>Focusing on Sculpting and Graphic Design.</p>
-    </div>
-
-    {/* BOX 4: FUTURE OUTLOOK */}
-    <div className={`${styles.statCard} ${styles.facultyNote}`}>
-      <div className={styles.rarityBadge}>RARITY: MYTHIC</div>
-      <span className={styles.itemHeader}>[MISSION: EXPANSION]</span>
-      <p className={styles.quote}>"EVOLVING INTO WEB DEV."</p>
-    </div>
-
-  </div>
-</section>
+    </section>
   );
 };
 
