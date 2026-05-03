@@ -1,9 +1,10 @@
 .aboutScene {
-  padding: 80px 2rem;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 3rem;
+  padding: 0;
+  margin: 0;
 }
 
 .asymmetricGrid {
@@ -13,8 +14,6 @@
   gap: 2rem;
   width: 100%; 
   max-width: 1400px;
-  /* margin: 0 auto is now the safety net[cite: 5] */
-  margin: 0 auto; 
 }
 
 @keyframes float {

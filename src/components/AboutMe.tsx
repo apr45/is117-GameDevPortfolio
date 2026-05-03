@@ -75,14 +75,6 @@ const AboutMe: React.FC = () => {
         Focusing on minimalist and geometric aesthetics inspired by the Bauhaus movement.
       </p>
     </div>
-
-    {/* HOBBY 3: ARCHITECTURE */}
-    <div className={styles.pillarCard}>
-      <h3 className={styles.pillarTitle}>3. LOGIC</h3>
-      <p className={styles.pillarText}>
-        Using Cialdini's principles to design persuasive and intuitive digital environments.
-      </p>
-    </div>
   </div>
 </div>
 
