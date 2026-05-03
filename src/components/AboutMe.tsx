@@ -17,7 +17,6 @@ const AboutMe: React.FC = () => {
         </div>
 
         {/* BOX 2: PROGRAMMING TOOLKIT (Wide - Top Right) */}
-        /* BOX 2: PROGRAMMING TOOLKIT (Wide - Top Right) */
 <div className={`${styles.statCard} ${styles.wideItem}`}>
   <div className={styles.rarityBadge}>STAT: INT</div>
   <span className={styles.itemHeader}>[SKILL: CORE_LOGIC]</span>
@@ -59,19 +58,38 @@ const AboutMe: React.FC = () => {
 </div>
 
         {/* BOX 3: CREATIVE PATH (Wide - Bottom Left) */}
-        <div className={`${styles.statCard} ${styles.wideItem}`}>
-          <div className={styles.rarityBadge}>TYPE: ARTISAN</div>
-          <span className={styles.itemHeader}>[PATH: WORLD_BUILDING]</span>
-          <p className={styles.quote}>
-            SCULPTING & GRAPHIC DESIGN
-          </p>
-          <p className={styles.statLabel}>
-            Visualizing aesthetic environments and tangible assets to build deeper gameplay immersion.
-          </p>
-        </div>
+<div className={`${styles.statCard} ${styles.wideItem}`}>
+  <div className={styles.rarityBadge}>TYPE: ARTISAN</div>
+  <span className={styles.itemHeader}>[PATH: WORLD_BUILDING]</span>
+  
+  <div className={styles.modelGrid}>
+    {/* HOBBY 1: SCULPTING */}
+    <div className={styles.pillarCard}>
+      <h3 className={styles.pillarTitle}>1. SCULPTING</h3>
+      <p className={styles.pillarText}>
+        Physical and digital modeling to create tangible assets for gameplay immersion.
+      </p>
+    </div>
+
+    {/* HOBBY 2: GRAPHIC DESIGN */}
+    <div className={styles.pillarCard}>
+      <h3 className={styles.pillarTitle}>2. DESIGN</h3>
+      <p className={styles.pillarText}>
+        Focusing on minimalist and geometric aesthetics inspired by the Bauhaus movement.
+      </p>
+    </div>
+
+    {/* HOBBY 3: ARCHITECTURE */}
+    <div className={styles.pillarCard}>
+      <h3 className={styles.pillarTitle}>3. LOGIC</h3>
+      <p className={styles.pillarText}>
+        Using Cialdini's principles to design persuasive and intuitive digital environments.
+      </p>
+    </div>
+  </div>
+</div>
 
         {/* BOX 4: WEB DEV GOALS (Narrow - Bottom Right) */}
-        {/* Removed facultyNote class to get rid of the pink shadow */}
         <div className={styles.statCard}>
           <div className={styles.rarityBadge}>RARITY: LEGENDARY</div>
           <span className={styles.itemHeader}>[MISSION: WEB_EXPANSION]</span>
