@@ -1,20 +1,21 @@
 .aboutScene {
-  padding: 80px 1rem; /* Full screen horizontal width */
+  padding: 80px 0; 
   width: 100%;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Allows vertical stacking if needed */
+  justify-content: center; /* Vertical Center */
+  align-items: center;    /* Horizontal Center */
   overflow: hidden;
 }
 
 .asymmetricGrid {
   display: grid;
-  /* 4 equal columns across the entire width */
   grid-template-columns: repeat(4, 1fr);
-  /* Two equal height rows, making boxes same height */
   grid-template-rows: repeat(2, 1fr);
   gap: 2rem;
-  width: 95vw; /* Slightly extends across the screen width */
-  max-width: 1500px; /* Keep large but bounded */
+  width: 90vw; /* Keeps it wide but centered within the scene */
+  max-width: 1400px;
 }
 
 @keyframes float {
@@ -31,7 +32,7 @@
   box-shadow: 
     0 0 0 4px #000, 
     0 0 0 6px #fff;
-  padding: 2.5rem; /* Large content area */
+  padding: 2.5rem;
   animation: float 4s ease-in-out infinite;
   transition: all 0.3s ease;
   overflow: hidden;
@@ -103,17 +104,7 @@
 
 /* WIDE ITEM LOGIC: Mimics the larger highlighted boxes [cite: 8] */
 .wideItem {
-  /* This box will span two column tracks */
   grid-column: span 2;
-  /* Ensure it has visual weight over standard boxes */
-  flex-grow: 2;
-}
-
-.facultyNote {
-  box-shadow: 
-    0 0 0 4px #000, 
-    0 0 0 6px #fff,
-    16px 16px 0px var(--accent-pink);
 }
 
 /* --- The Interior Grid for Python, Java, C# --- */

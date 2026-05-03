@@ -49,8 +49,9 @@ const AboutMe: React.FC = () => {
           </p>
         </div>
 
-        {/* BOX 4: WEB DEV GOALS (Narrow - Bottom Right - LEGENDARY BOX) */}
-        <div className={`${styles.statCard} ${styles.facultyNote}`}>
+        {/* BOX 4: WEB DEV GOALS (Narrow - Bottom Right) */}
+        {/* Removed facultyNote class to get rid of the pink shadow */}
+        <div className={styles.statCard}>
           <div className={styles.rarityBadge}>RARITY: LEGENDARY</div>
           <span className={styles.itemHeader}>[MISSION: WEB_EXPANSION]</span>
           <span className={styles.statValue}>WEB_DEV</span>
