@@ -4,59 +4,55 @@ import styles from '../styles/AboutMe.module.css';
 const AboutMe: React.FC = () => {
   return (
     <section id="about" className={styles.aboutScene}>
-      {/* Top Level Stats */}
-      <div className={styles.statsGrid}>
-    {/* All three top cards now use the same 'Item' design */}
-    <div className={styles.statCard}>
-      <div className={styles.rarityBadge}>TYPE: ID</div>
-      <span className={styles.itemHeader}>[STATION: NJIT]</span>
-      <span className={styles.statValue}>NJIT</span>
-      <p className={styles.statLabel}>Current IT Student specializing in Game Development</p>
-    </div>
-    
-    <div className={styles.statCard}>
-       <div className={styles.rarityBadge}>STAT: ATK</div>
-       <span className={styles.itemHeader}>[SKILL: PHYSICS]</span>
-       <span className={styles.statValue}>100%</span>
-       <p className={styles.statLabel}>Commitment to mastering game mechanics</p>
-    </div>
-
-    <div className={styles.statCard}>
-       <div className={styles.rarityBadge}>TYPE: ARCHIVE</div>
-       <span className={styles.itemHeader}>[PROJECT: BALLET]</span>
-       <span className={styles.statValue}>v2.0</span>
-       <p className={styles.statLabel}>Digital archive for Triadic Ballet reconstructions</p>
-    </div>
-  </div>
-
-      <div className={styles.operatingModel}>
-      {/* Standard Item Box */}
-        <div className={styles.modelContainer}>
-          <div className={styles.rarityBadge}>TYPE: SYSTEM_LOG</div>
-          <span className={styles.itemHeader}>[ITEM: DEVELOPMENT_CORE]</span>
-    
-          <div className={styles.modelGrid}>
-            <div className={styles.pillarCard}>
-              <h3 className={styles.pillarTitle}>MASTER MECHANICS</h3>
-              <p className={styles.pillarText}>Mastering physics-based character persistence.</p>
-            </div>
-            {/* ... other pillarCards ... */}
-          </div>
-        </div>
-
-        {/* Legendary Item Box */}
-        <div className={styles.facultyNote}>
-          <div className={styles.rarityBadge}>RARITY: LEGENDARY</div>
-          <span className={styles.itemHeader}>[MISSION: IMMERSIVE_UX]</span>
-    
-          <p className={styles.quote}>
-            "BUILDING SYSTEMS THAT DRAW PLAYERS DEEP INTO THE ADVENTURE."
+      <div className={styles.aboutGrid}>
+        
+        {/* BOX 1: ACADEMIC STATUS */}
+        <div className={styles.statCard}>
+          <div className={styles.rarityBadge}>STATUS: ACTIVE</div>
+          <span className={styles.itemHeader}>[STATION: NJIT]</span>
+          <span className={styles.statValue}>IT MAJOR</span>
+          <p className={styles.statLabel}>
+            Specializing in Game Development. Crafting the bridge between technical infrastructure and player experience.
           </p>
-    
-          <div className={styles.terminalTags} style={{ marginTop: '20px', color: 'var(--accent-pink)', fontSize: '0.7rem' }}>
-            <span>#UNITY</span> <span>#C#</span> <span>#PHYSICS</span>
-          </div>
         </div>
+
+        {/* BOX 2: PROGRAMMING STACK */}
+        <div className={styles.statCard}>
+          <div className={styles.rarityBadge}>STAT: INT</div>
+          <span className={styles.itemHeader}>[SKILL: CORE_LOGIC]</span>
+          <span className={styles.statValue}>DEV TOOLKIT</span>
+          <div className={styles.tagRow}>
+            <span className={styles.tag}>#PYTHON</span>
+            <span className={styles.tag}>#JAVA</span>
+            <span className={styles.tag}>#C#_UNITY</span>
+          </div>
+          <p className={styles.statLabel} style={{marginTop: '10px'}}>
+            Architecting robust systems and gameplay mechanics within the Unity Engine.
+          </p>
+        </div>
+
+        {/* BOX 3: CREATIVE HOBBIES */}
+        <div className={styles.statCard}>
+          <div className={styles.rarityBadge}>TYPE: ARTISAN</div>
+          <span className={styles.itemHeader}>[PATH: WORLD_BUILDING]</span>
+          <span className={styles.statValue}>CREATIVE</span>
+          <p className={styles.statLabel}>
+            Leveraging <strong>Sculpting</strong> and <strong>Graphic Design</strong> to visualize aesthetic worlds and tangible assets.
+          </p>
+        </div>
+
+        {/* BOX 4: FUTURE OUTLOOK (LEGENDARY BOX) */}
+        <div className={`${styles.statCard} ${styles.facultyNote}`}>
+          <div className={styles.rarityBadge}>RARITY: MYTHIC</div>
+          <span className={styles.itemHeader}>[MISSION: EXPANSION]</span>
+          <p className={styles.quote}>
+            "EVOLVING BEYOND THE GAME ENGINE INTO FULL-STACK WEB DEVELOPMENT."
+          </p>
+          <p className={styles.statLabel}>
+            Seeking to integrate immersive interactive mechanics into modern web ecosystems.
+          </p>
+        </div>
+
       </div>
     </section>
   );

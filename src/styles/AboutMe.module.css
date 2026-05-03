@@ -6,15 +6,6 @@
   gap: 3rem;
 }
 
-/* Stats Row at the top */
-.statsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 1200px;
-}
-
 .statValue {
   font-family: var(--font-pixel);
   font-size: 3rem;
@@ -30,11 +21,10 @@
   line-height: 1.4;
 }
 
-/* Operating Model Section */
-.operatingModel {
+.aboutGrid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 Layout */
+  gap: 2rem;
   width: 100%;
   max-width: 1200px;
 }
@@ -45,22 +35,18 @@
   100% { transform: translateY(0px); }
 }
 
-.statCard, 
-.modelContainer, 
-.facultyNote {
+.statCard {
   position: relative;
   background: #111;
   border: 2px solid #ffffff;
   box-shadow: 
     0 0 0 4px #000, 
     0 0 0 6px #fff;
-  
   padding: 2rem;
-  margin: 10px;
-  overflow: hidden;
-  z-index: 1;
-  
-  /* Apply the smooth float by default */
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   animation: float 4s ease-in-out infinite;
   transition: all 0.3s ease;
 }
@@ -70,9 +56,7 @@
   to { background-position: 0 100%; }
 }
 
-.statCard::before,
-.modelContainer::before,
-.facultyNote::before {
+.statCard::before {
   content: " ";
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
@@ -87,9 +71,7 @@
   animation: scrollLines 10s linear infinite;
 }
 
-.statCard:hover, 
-.modelContainer:hover, 
-.facultyNote:hover {
+.statCard:hover {
   /* Pause floating on hover and lift slightly higher */
   animation-play-state: paused;
   transform: translateY(-12px) scale(1.02);
@@ -161,4 +143,19 @@
   font-family: monospace;
   font-size: 0.6rem;
   z-index: 3;
+
+  /* Skill tags for the bottom of boxes */
+.tagRow {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--accent-pink);
+  text-transform: uppercase;
+}
 }
