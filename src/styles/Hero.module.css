@@ -30,14 +30,14 @@
   padding-right: 1.5rem;
   position: relative;
   z-index: 10; 
-  margin-right: -50px; 
+  margin-right: -65px; 
   max-width: 550px;
 }
 
 .heroHeadline {
   font-family: var(--font-pixel);
   /* Reduced size for paragraph length while maintaining impact */
-  font-size: 2.5rem; 
+  font-size: 3 rem; 
   line-height: 1.2;
   text-transform: uppercase;
   color: var(--text-main);
@@ -244,7 +244,7 @@
   /* Keep the yellow gradient and glow */
   background: linear-gradient(to bottom, transparent, var(--accent-yellow));
   box-shadow: 0 0 12px var(--accent-yellow);
-  animation: dataFall 6s linear infinite;
+  animation: dataFall 5s linear infinite;
   /* Initial state is invisible */
   opacity: 0;
 }
