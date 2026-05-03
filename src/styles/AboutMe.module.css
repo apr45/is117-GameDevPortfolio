@@ -1,30 +1,21 @@
 .aboutScene {
-  padding: 80px 2rem;
+  /* Remove excessive padding that might cause internal shifting[cite: 5] */
+  padding: 40px 0; 
   width: 100%;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Allows vertical stacking if needed */
-  justify-content: center; /* Vertical Center */
-  align-items: center;    /* Horizontal Center */
-  overflow: hidden;
-  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 .asymmetricGrid {
   display: grid;
-  /* Maintain your 4-column structure */
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 2.5rem;
-  
-  /* The Fix: Use a percentage width and auto margins to balance position */
-  width: 95vw; 
+  gap: 2rem;
+  width: 90vw; 
   max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-  
-  /* Ensure it sits above any background scanlines */
-  z-index: 5;
+  /* margin: 0 auto is now the safety net[cite: 5] */
+  margin: 0 auto; 
 }
 
 @keyframes float {

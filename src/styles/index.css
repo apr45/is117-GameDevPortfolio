@@ -1,5 +1,5 @@
 :root {
-  /* Bauhaus-inspired 8-bit palette */
+  /* 8-bit palette */
   --bg-primary: #0a0a0a;
   --text-main: #ffffff;
   --accent-yellow: #f1c40f;
@@ -39,13 +39,13 @@ body {
 
 .scene-container {
   height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: sticky; /* Keeps the scene pinned during the fade/zoom */
+  justify-content: center; /* Ensure internal scene content is centered[cite: 8] */
+  position: sticky; 
   top: 0;
-  padding: 2rem;
-  will-change: transform, opacity;
+  padding: 0; /* Remove restrictive padding[cite: 8] */
 }
 
 /* Optional: Add a subtle 8-bit scanline effect across the whole site */
@@ -79,25 +79,24 @@ body {
   position: relative;
   z-index: 2;
   width: 100%;
-  margin: 0 auto; /* Centers the container itself */
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers children horizontally */
+  align-items: center; /* Ensures all sections stay centered horizontally */
 }
 
 .step-wrapper {
-  /* Reduce this slightly so the scroll feels more responsive */
   min-height: 100vh; 
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-right: 10%;
-  margin-bottom: 10vh; /* Reduced gap between scenes */
+  justify-content: center; /* Changed from flex-start to center */
+  padding: 0; /* Removed padding-right: 10%[cite: 8] */
+  margin-bottom: 10vh;
 }
 
 .step-wrapper > * {
   pointer-events: auto;
- 
 }
 
 /* --- Experience Bar Logic --- */

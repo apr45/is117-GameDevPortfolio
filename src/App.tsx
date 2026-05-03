@@ -14,33 +14,32 @@ const SceneWrapper = ({ children }: { children: React.ReactNode }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    // Adjusted offset to trigger earlier in the scroll
     offset: ["start end", "end start"] 
   });
 
-  // Change these values to [0, 0.1, 0.9, 1] so it fades in ALMOST immediately
   const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0.9, 1, 1, 0.9]);
-  
   const smoothScale = useSpring(scale, { stiffness: 100, damping: 30 });
 
   return (
-  <motion.div 
-    ref={ref} 
-    style={{ 
-      opacity, 
-      scale: smoothScale,
-      position: 'relative',
-      // --- ADDED FOR CENTERING ---
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '100%',
-      minHeight: '100vh' // Ensures each section takes up the full view for centering
-    }}
-  >
-    {children}
-  </motion.div>
+    <motion.div 
+      ref={ref} 
+      className="step-wrapper" // Apply the centered step-wrapper class here[cite: 8]
+      style={{ 
+        opacity, 
+        scale: smoothScale,
+        position: 'relative',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+      }}
+    >
+      {/* Ensure the child (Hero, AboutMe, etc.) is centered within this motion div */}
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+        {children}
+      </div>
+    </motion.div>
   );
 };
 
