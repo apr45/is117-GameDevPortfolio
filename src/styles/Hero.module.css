@@ -21,7 +21,7 @@
   position: relative;
   /* Higher z-index than the pulse container */
   z-index: 5; 
-  margin-bottom: 10%;
+  margin-bottom: 9%;
 }
 
 .heroTextBlock {
