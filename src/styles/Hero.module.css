@@ -30,7 +30,7 @@
   padding-right: 1.5rem;
   position: relative;
   z-index: 10; 
-  margin-right: -65px; 
+  margin-right: -35 px; 
   max-width: 550px;
 }
 
@@ -38,7 +38,7 @@
   font-family: var(--font-pixel);
   /* Reduced size for paragraph length while maintaining impact */
   font-size: 3 rem; 
-  line-height: 1.2;
+  line-height: 1.5;
   text-transform: uppercase;
   color: var(--text-main);
   margin: 0;
@@ -232,7 +232,7 @@
   width: 100%;
   height: 100%;
   /* Set lower than heroGrid (which should be z-index: 2 or higher) */
-  z-index: 1; 
+  z-index: 0; 
   pointer-events: none;
 }
 
@@ -244,7 +244,7 @@
   /* Keep the yellow gradient and glow */
   background: linear-gradient(to bottom, transparent, var(--accent-yellow));
   box-shadow: 0 0 12px var(--accent-yellow);
-  animation: dataFall 5s linear infinite;
+  animation: dataFall 7s linear infinite;
   /* Initial state is invisible */
   opacity: 0;
 }
