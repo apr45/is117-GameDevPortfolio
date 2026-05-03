@@ -31,7 +31,7 @@
   position: relative;
   z-index: 10; 
   margin-right: -50px; 
-  max-width: 650px;
+  max-width: 550px;
 }
 
 .heroHeadline {
@@ -241,17 +241,30 @@
   top: -20vh;
   width: 2px;
   height: 30vh;
-  /* Updated to Yellow gradient */
+  /* Keep the yellow gradient and glow */
   background: linear-gradient(to bottom, transparent, var(--accent-yellow));
-  /* Added yellow glow to make them 'pop' */
   box-shadow: 0 0 12px var(--accent-yellow);
   animation: dataFall 6s linear infinite;
-  opacity: 0.6;
+  /* Initial state is invisible */
+  opacity: 0;
 }
 
 @keyframes dataFall {
-  from { transform: translateY(-20vh); opacity: 0; }
-  20% { opacity: 0.5; }
-  80% { opacity: 0.5; }
-  to { transform: translateY(120vh); opacity: 0; }
+  0% { 
+    transform: translateY(-20vh); 
+    opacity: 0; 
+  }
+  /* Fade in quickly at the start */
+  10% { 
+    opacity: 0.6; 
+  }
+  /* Stay visible for the majority of the fall[cite: 5] */
+  70% { 
+    opacity: 0.6; 
+  }
+  /* --- BLENDING FIX: Fade out completely before the end --- */
+  100% { 
+    transform: translateY(120vh); 
+    opacity: 0; 
+  }
 }

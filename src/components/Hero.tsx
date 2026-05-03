@@ -36,8 +36,8 @@ const Hero: React.FC = () => {
             className={styles.heroHeadline}
           >
             Embark on a journey where I design 
-            <span className={styles.glowPink}> aesthetic worlds</span> and develop 
-            <span className={styles.glowYellow}> interactive mechanics</span> to build 
+            <span className={styles.glowYellow}> aesthetic worlds</span> and develop 
+            <span className={styles.glowPink}> interactive mechanics</span> to build 
             <span className={styles.glowYellow}> immersive gameplay</span>.
           </motion.h1>
         </div>
