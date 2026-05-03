@@ -8,7 +8,7 @@ const AboutMe: React.FC = () => {
         
         {/* BOX 1: NJIT STATUS (Narrow - Top Left) */}
         <div className={styles.statCard}>
-          <span className={styles.itemHeader}>[STATION: NJIT]</span>
+          <span className={styles.itemHeader}>[EDUCATION: NJIT]</span>
           <span className={styles.statValue}>IT MAJOR</span>
           <p className={styles.statLabel}>
             Specializing in Game Development. Crafting the technical bridge between systems and player experience.
@@ -17,7 +17,7 @@ const AboutMe: React.FC = () => {
 
         {/* BOX 2: PROGRAMMING TOOLKIT (Wide - Top Right) */}
 <div className={`${styles.statCard} ${styles.wideItem}`}>
-  <span className={styles.itemHeader}>[SKILL: CORE_LOGIC]</span>
+  <span className={styles.itemHeader}>[SKILLS: PROGRAMMING_LANGUAGES]</span>
   
   <div className={styles.modelGrid}>
     {/* PYTHON */}
