@@ -1,10 +1,9 @@
 .aboutScene {
-  /* Remove excessive padding that might cause internal shifting[cite: 5] */
-  padding: 40px 0; 
-  width: 100%;
+  padding: 80px 2rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: 3rem;
 }
 
 .asymmetricGrid {
@@ -12,7 +11,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 2rem;
-  width: 90vw; 
+  width: 100%; 
   max-width: 1400px;
   /* margin: 0 auto is now the safety net[cite: 5] */
   margin: 0 auto; 
