@@ -58,15 +58,14 @@
 }
 
 .projectCard {
-  flex: 0 0 450px; /* Fixed width for cards */
+  flex: 0 0 650px; /* Increased width to accommodate the side-by-side layout */
   height: 320px;
   background: #111;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  scroll-snap-align: center; /* The card "magnets" to the center of the screen */
-  transition: transform 0.3s ease;
+  flex-direction: row; /* Aligns contentSide and imageSide horizontally */
   border: var(--border-pixel);
+  padding: 0; /* Remove padding so content hits the edges like the reference */
+  overflow: hidden;
 }
 
 .projectCard:hover {
@@ -94,40 +93,52 @@
   letter-spacing: 1px;
 }
 
-/* --- ProjectSlider.module.css --- */
-
-.imageContainer {
-  position: relative;
-  width: 100%;
-  height: 150px; /* Adjust height as needed */
-  margin-bottom: 1rem;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.contentSide {
+  flex: 1; /* Takes up remaining space[cite: 9] */
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.projectImage {
+.imageSide {
+  width: 40%; /* Fixed width for the image area[cite: 9] */
+  position: relative;
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  background: #000;
+}
+
+.imageLabel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  color: #fff;
+  z-index: 3;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.cardImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(100%) contrast(120%); /* Optional: matches 8-bit aesthetic */
+  filter: grayscale(100%);
   transition: filter 0.3s ease;
 }
 
-.projectCard:hover .projectImage {
-  filter: grayscale(0%) contrast(100%); /* Color returns on hover */
+.projectCard:hover .cardImage {
+  filter: grayscale(0%);
 }
 
-.imageOverlay {
+.crtOverlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: linear-gradient(
     rgba(18, 16, 16, 0) 50%, 
     rgba(0, 0, 0, 0.2) 50%
   );
   background-size: 100% 4px;
-  pointer-events: none;
   z-index: 2;
+  pointer-events: none;
 }
