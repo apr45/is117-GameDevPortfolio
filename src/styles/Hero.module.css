@@ -30,14 +30,14 @@
   padding-right: 1.5rem;
   position: relative;
   z-index: 10; 
-  margin-right: -20 px; 
+  margin-right: 0 px; 
   max-width: 550px;
 }
 
 .heroHeadline {
   font-family: var(--font-pixel);
   /* Increased from 2.5rem to 3.2rem for more impact */
-  font-size: 3.5rem; 
+  font-size: 3.2rem; 
   /* Adjusted line-height to accommodate larger text */
   line-height: 1.1;
   text-transform: uppercase;
@@ -238,16 +238,15 @@
   pointer-events: none;
 }
 
+/* --- THE PULSE LINE --- */
 .pulseLine {
   position: absolute;
-  top: -20vh;
+  top: -20vh; /* Start above the viewport */
   width: 2px;
   height: 30vh;
-  /* Keep the yellow gradient and glow */
   background: linear-gradient(to bottom, transparent, var(--accent-yellow));
   box-shadow: 0 0 12px var(--accent-yellow);
   animation: dataFall 6s linear infinite;
-  /* Initial state is invisible */
   opacity: 0;
 }
 
@@ -256,17 +255,25 @@
     transform: translateY(-20vh); 
     opacity: 0; 
   }
-  /* Fade in quickly at the start */
+  /* Fade in quickly at the top */
   10% { 
     opacity: 0.6; 
   }
-  /* Stay visible for the majority of the fall[cite: 5] */
-  70% { 
+  /* --- BLENDING FIX: Start fading out much earlier --- */
+  60% { 
     opacity: 0.6; 
   }
-  /* --- BLENDING FIX: Fade out completely before the end --- */
+  /* 
+     Fade to 0 by 90% of the animation duration.
+     Adjust translateY to a lower value (e.g., 90vh) so it 
+     physically stops before the container ends.
+  */
+  90% {
+    opacity: 0;
+    transform: translateY(90vh); 
+  }
   100% { 
-    transform: translateY(120vh); 
+    transform: translateY(100vh); 
     opacity: 0; 
   }
 }
