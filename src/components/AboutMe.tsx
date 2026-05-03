@@ -17,25 +17,46 @@ const AboutMe: React.FC = () => {
         </div>
 
         {/* BOX 2: PROGRAMMING TOOLKIT (Wide - Top Right) */}
-        <div className={`${styles.statCard} ${styles.wideItem}`}>
-          <div className={styles.rarityBadge}>STAT: INT</div>
-          <span className={styles.itemHeader}>[SKILL: CORE_LOGIC]</span>
-          
-          <div className={styles.modelGrid}>
-            <div className={styles.pillarCard}>
-              <h3 className={styles.pillarTitle}>1. PYTHON</h3>
-              <p className={styles.pillarText}>System automation & data structures.</p>
-            </div>
-            <div className={styles.pillarCard}>
-              <h3 className={styles.pillarTitle}>2. JAVA</h3>
-              <p className={styles.pillarText}>Robust object-oriented design patterns.</p>
-            </div>
-            <div className={styles.pillarCard}>
-              <h3 className={styles.pillarTitle}>3. C# (UNITY)</h3>
-              <p className={styles.pillarText}>Primary gameplay mechanics developer.</p>
-            </div>
-          </div>
+        /* BOX 2: PROGRAMMING TOOLKIT (Wide - Top Right) */
+<div className={`${styles.statCard} ${styles.wideItem}`}>
+  <div className={styles.rarityBadge}>STAT: INT</div>
+  <span className={styles.itemHeader}>[SKILL: CORE_LOGIC]</span>
+  
+  <div className={styles.modelGrid}>
+    {/* PYTHON */}
+    <div className={styles.pillarCard}>
+      <div className={styles.chartContainer}>
+        <div className={`${styles.circleSmall} ${styles.pythonChart}`}>
+          <span className={styles.percentageText}>85%</span>
         </div>
+      </div>
+      <h3 className={styles.pillarTitle}>1. PYTHON</h3>
+      <p className={styles.pillarText}>System automation & data structures.</p>
+    </div>
+
+    {/* JAVA */}
+    <div className={styles.pillarCard}>
+      <div className={styles.chartContainer}>
+        <div className={`${styles.circleSmall} ${styles.javaChart}`}>
+          <span className={styles.percentageText}>75%</span>
+        </div>
+      </div>
+      <h3 className={styles.pillarTitle}>2. JAVA</h3>
+      <p className={styles.pillarText}>Robust object-oriented design patterns.</p>
+    </div>
+
+    {/* C# (UNITY) */}
+    <div className={styles.pillarCard}>
+      <div className={styles.chartContainer}>
+        <div className={`${styles.circleSmall} ${styles.unityChart}`}>
+          <span className={styles.percentageText}>95%</span>
+        </div>
+      </div>
+      <h3 className={styles.pillarTitle}>3. C# (UNITY)</h3>
+      <p className={styles.pillarText}>Primary gameplay mechanics developer.</p>
+    </div>
+  </div>
+</div>
 
         {/* BOX 3: CREATIVE PATH (Wide - Bottom Left) */}
         <div className={`${styles.statCard} ${styles.wideItem}`}>

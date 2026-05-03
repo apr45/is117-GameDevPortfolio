@@ -1,5 +1,5 @@
 .aboutScene {
-  padding: 80px 0; 
+  padding: 80px 2rem;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -13,7 +13,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 3rem;
   width: 90vw; /* Keeps it wide but centered within the scene */
   max-width: 1400px;
 }
@@ -178,43 +178,42 @@
 .chartContainer {
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 /* The Circle Base */
 .circleSmall {
-  width: 45px;
-  height: 45px;
+  width: 60px; /* Slightly larger for the wide box layout */
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.6rem;
   position: relative;
   z-index: 1;
 }
 
-/* Reuse your conic-gradient logic */
+/* Conic-gradients for the rings */
 .pythonChart { background: conic-gradient(var(--accent-yellow) 85%, #222 0); }
 .javaChart   { background: conic-gradient(var(--accent-yellow) 75%, #222 0); }
 .unityChart  { background: conic-gradient(var(--accent-yellow) 95%, #222 0); }
 
-/* Inner hole for the ring effect */
+/* Inner hole (Mask)[cite: 7] */
 .circleSmall::after {
   content: "";
   position: absolute;
-  width: 35px;
-  height: 35px;
-  background: #111;
+  width: 50px; /* Adjust to set ring thickness */
+  height: 50px;
+  background: #111; /* Must match the statCard background */
   border-radius: 50%;
-  z-index: -1;
+  z-index: 2; /* Sits above the gradient */
 }
 
-/* Percentage text sitting on top */
+/* Percentage text sitting on the very top[cite: 7] */
 .percentageText {
   position: relative;
-  z-index: 10;
+  z-index: 3; /* Above the mask */
   font-family: var(--font-pixel);
-  font-size: 1rem;
+  font-size: 0.75rem;
   color: #fff;
 }
