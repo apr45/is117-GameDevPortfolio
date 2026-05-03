@@ -58,20 +58,37 @@
 }
 
 .projectCard {
-  flex: 0 0 650px; /* Increased width to accommodate the side-by-side layout */
+  flex: 0 0 650px;
   height: 320px;
   background: #111;
   display: flex;
-  flex-direction: row; /* Aligns contentSide and imageSide horizontally */
+  flex-direction: row;
   border: var(--border-pixel);
-  padding: 0; /* Remove padding so content hits the edges like the reference */
   cursor: pointer;
+  transition: all 0.3s ease;
   overflow: hidden;
+}
+
+/* 1. ELEMENTS HIDDEN BY DEFAULT */
+.projectDesc,
+.techStack,
+.imageSide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
 .projectCard:hover {
   transform: translateY(-10px);
   border-color: var(--accent-yellow);
+}
+
+/* 2. THE HOVER TRIGGER: Reveal everything when card is hovered */
+.projectCard:hover .projectDesc,
+.projectCard:hover .techStack,
+.projectCard:hover .imageSide {
+  opacity: 1;
+  visibility: visible;
 }
 
 .cardHeader {
@@ -142,10 +159,4 @@
   background-size: 100% 4px;
   z-index: 2;
   pointer-events: none;
-}
-
-.projectDesc,
-.techStack,
-.imageSide {
-  opacity: 0;
 }
