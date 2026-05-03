@@ -30,20 +30,21 @@
   padding-right: 1.5rem;
   position: relative;
   z-index: 10; 
-  margin-right: 0 px; 
-  max-width: 550px;
+  margin-right: 15px; 
+  /* Expanded to 750px to accommodate larger text horizontally */
+  max-width: 750px; 
 }
 
 .heroHeadline {
   font-family: var(--font-pixel);
-  /* Increased from 2.5rem to 3.2rem for more impact */
-  font-size: 3.2 rem; 
-  /* Adjusted line-height to accommodate larger text */
-  line-height: 1.1;
+  /* Increased from 3.2rem to 3.8rem for maximum impact */
+  font-size: 3.8rem; 
+  /* Tightened line-height slightly for better grouping[cite: 6] */
+  line-height: 1.05;
   text-transform: uppercase;
   color: var(--text-main);
   margin: 0;
-  /* Maintain the shadow to keep it readable against the grid[cite: 5] */
+  /* Retaining the black shadow for legibility against the grid[cite: 6] */
   text-shadow: 2px 2px 0px #000; 
 }
 
