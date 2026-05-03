@@ -7,15 +7,24 @@
   justify-content: center; /* Vertical Center */
   align-items: center;    /* Horizontal Center */
   overflow: hidden;
+  position: relative;
 }
 
 .asymmetricGrid {
   display: grid;
+  /* Maintain your 4-column structure */
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 2rem;
-  width: 100%;
+  gap: 2.5rem;
+  
+  /* The Fix: Use a percentage width and auto margins to balance position */
+  width: 95vw; 
   max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  /* Ensure it sits above any background scanlines */
+  z-index: 5;
 }
 
 @keyframes float {
@@ -32,13 +41,14 @@
   box-shadow: 
     0 0 0 4px #000, 
     0 0 0 6px #fff;
-  padding: 2rem;
-  min-height: 250px;
+  padding: 2.5rem;
+  min-height: 350px; /* Increased height to give the grid more presence */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between; /* Keeps headers at top and content at bottom */
   animation: float 4s ease-in-out infinite;
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 @keyframes scrollLines {
@@ -69,7 +79,7 @@
   /* Shift the box-shadows to create a chromatic aberration / misaligned UI look */
   box-shadow: 
     -4px -2px 0px var(--accent-pink), /* Magenta shift */
-    4px 2px 0px #00ffff,             /* Cyan shift */
+    4px 2px 0px var(--accent-pink),             /* Cyan shift */
     0 0 0 4px #000, 
     0 0 0 6px #fff;
   
