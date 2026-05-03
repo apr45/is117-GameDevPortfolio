@@ -65,6 +65,7 @@
   flex-direction: row; /* Aligns contentSide and imageSide horizontally */
   border: var(--border-pixel);
   padding: 0; /* Remove padding so content hits the edges like the reference */
+  cursor: pointer;
   overflow: hidden;
 }
 
@@ -141,4 +142,10 @@
   background-size: 100% 4px;
   z-index: 2;
   pointer-events: none;
+}
+
+.projectDesc,
+.techStack,
+.imageSide {
+  opacity: 0;
 }
