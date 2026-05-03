@@ -23,16 +23,26 @@
 
 .aboutGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  grid-template-columns: 1fr 1fr; 
+  gap: 1.5rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
 }
 
-/* This makes the skills container wide[cite: 3] */
-.wideItem {
-  grid-column: span 2; /* Stretch across the grid */
-  min-height: 350px; /* Make it longer vertically[cite: 2] */
+.verticalStack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skillRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-pixel);
+  font-size: 0.9rem;
+  color: #fff;
 }
 
 @keyframes float {
@@ -176,40 +186,32 @@
 }
 
 /* The Circle Base */
-.circle {
-  width: 100px;
-  height: 100px;
+.circleSmall {
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 0.6rem;
   position: relative;
-  /* Dark inner hole to create the ring effect[cite: 7] */
-  background: #111;
-  border: 4px solid rgba(255, 255, 255, 0.1);
+  z-index: 1;
 }
 
-/* Ring logic using conic-gradients[cite: 7] */
-.pythonChart {
-  background: conic-gradient(var(--accent-yellow) 85%, transparent 0);
-}
+/* Reuse your conic-gradient logic */
+.pythonChart { background: conic-gradient(var(--accent-yellow) 85%, #222 0); }
+.javaChart   { background: conic-gradient(var(--accent-yellow) 75%, #222 0); }
+.unityChart  { background: conic-gradient(var(--accent-yellow) 95%, #222 0); }
 
-.javaChart {
-  background: conic-gradient(var(--accent-yellow) 75%, transparent 0);
-}
-
-.unityChart {
-  background: conic-gradient(var(--accent-yellow) 95%, transparent 0);
-}
-
-/* Mask to make the chart a ring[cite: 7] */
-.circle::after {
+/* Inner hole for the ring effect */
+.circleSmall::after {
   content: "";
   position: absolute;
-  width: 80px;
-  height: 80px;
-  background: #111; /* Matches box background[cite: 7] */
+  width: 35px;
+  height: 35px;
+  background: #111;
   border-radius: 50%;
+  z-index: -1;
 }
 
 /* Percentage text sitting on top */
