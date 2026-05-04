@@ -71,7 +71,11 @@
 }
 
 .pinkText {
-  color: var(--accent-pink);
+  color: var(--accent-pink) !important;
+}
+
+.yellowText {
+  color: var(--accent-yellow);
 }
 
 .statusHeader {
@@ -91,18 +95,19 @@
 
 .mainTitle {
   font-size: 3rem;
-  color: #fff;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: -1px;
+  font-family: var(--font-pixel);
+  /* color will be handled by the .pinkText utility in TSX */
 }
 
 .description {
-  color: #ccc;
   line-height: 1.8;
   margin: 0 auto 3rem auto;
   font-size: 1.1rem;
-  max-width: 600px; /* Constrain width to keep centering tidy */
+  max-width: 600px;
+  /* color now defaults to yellow via .yellowText utility */
 }
 
 /* The Interactive Arcade Button */
