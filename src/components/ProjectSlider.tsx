@@ -63,9 +63,17 @@ const ProjectSlider: React.FC = () => {
               <div className={styles.cardHeader}>
                 <div className={styles.headerMain}>
                   <h3 className={styles.pillarTitle}>[MUSEUM EXHIBIT: TRIADIC BALLET]</h3>
-                  <span className={styles.statusLabel}>STATUS: COMPLETE</span>
-                </div>
-              </div>
+                  {/* Status now functions as a clickable link */}
+        <a 
+          href="https://apr45.github.io/is117-TriadicBalletMuseum/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className={styles.statusLink}
+        >
+          <span className={styles.statusLabel}>STATUS: VIEW_LIVE_SITE</span>
+        </a>
+      </div>
+    </div>
               <p className={styles.projectDesc}>
                 Architected a digital reconstruction of Oskar Schlemmer's "Triadic Ballet," 
                 translating the experimental trinity-based performance into a 

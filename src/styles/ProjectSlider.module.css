@@ -98,7 +98,7 @@
 .projectCard:hover .projectDesc,
 .projectCard:hover .imageSide {
   opacity: 1;
-  max-height: 210px; /* Large enough to fit content */
+  max-height: 215px; /* Large enough to fit content */
   transform: translateY(0);
   pointer-events: auto;
 }
@@ -188,10 +188,21 @@
   text-align: left;
 }
 
+.statusLink {
+  text-decoration: none; /* Removes default underline */
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+.statusLink:hover {
+  opacity: 0.8;
+  filter: brightness(1.2); /* Makes the pink pop on hover[cite: 5] */
+}
+
 .statusLabel {
   font-family: var(--font-pixel);
   font-size: 1.1rem;
-  color: var(--accent-pink);
+  color: var(--accent-pink); /* Keeps the consistent pink status color[cite: 5, 6] */
   display: block;
   margin-top: 5px;
 }
