@@ -83,12 +83,12 @@
 .titleWrapper {
   /* Counteract the terminalBox padding:
      Top: -4rem | Sides: -3rem */
-  margin: -2.5rem -3rem 3rem -3rem; 
+  margin: -4rem -3rem 3rem -3rem; 
   
   /* Ensure it stretches to the new width */
   width: calc(100% + 6rem); 
   
-  padding: 4.5rem 0;
+  padding: 4rem 0;
   background: var(--accent-pink);
   animation: barColorCycle 8s linear infinite;
 }

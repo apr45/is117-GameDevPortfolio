@@ -9,19 +9,23 @@ const ProjectSlider: React.FC = () => {
       <div className={styles.scrollContainer}>
         <div className={styles.projectTrack}>
           
-          {/* Project 1: Physics Engine */}
+          {/* Project 1: Royal Guardsman */}
           <div className={`${styles.projectCard} pixel-border`}>
             <div className={styles.contentSide}>
               <div className={styles.cardHeader}>
                 <div className={styles.headerMain}>
-                  <h3 className={styles.pillarTitle}>[ITEM: Physics Engine]</h3>
-                  <span className={styles.statusLabel}>STATUS: COMPLETE</span>
+                  <h3 className={styles.pillarTitle}>[TEAM PROJECT: Royal Guardstown]</h3>
+                  <span className={styles.statusLabel}>STATUS: Ongoing</span>
                 </div>
               </div>
               <p className={styles.projectDesc}>
-                Implemented custom Rigidbody dynamics for character persistence and state management.
+                Developed a sophisticated Unity-based RTS/FPS hybrid, bridging tower 
+                defense mechanics with immersive first-person combat. 
+                Collaborated in a 5-person agile team to engineer the primary UI/UX 
+                framework, execute strategic level design, and produce high-fidelity 
+                custom iconography.
               </p>
-              <div className={styles.techStack}>#UNITY #C# #PHYSICS</div>
+              <div className={styles.techStack}>#UNITY #C# #LEVEL_DESIGN #UI_UX</div>
             </div>
             <div className={styles.imageSide}>
               <div className={styles.crtOverlay} />

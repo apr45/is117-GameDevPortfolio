@@ -118,7 +118,7 @@
 }
 
 .techStack {
-  font-size: 0.7rem;
+  font-size: 1.1rem;
   color: var(--accent-pink);
   letter-spacing: 1px;
 }
@@ -198,7 +198,7 @@
 
 .statusLabel {
   font-family: var(--font-pixel);
-  font-size: 0.7rem;
+  font-size: 1.1rem;
   color: var(--accent-pink);
   display: block;
   margin-top: 5px;
