@@ -12,26 +12,23 @@ const CTA: React.FC = () => {
         viewport={{ once: true }}
         className={styles.terminalBox}
       >
-        <span className={styles.statusHeader}>
-          [SYSTEM_STATUS: <span className={styles.pinkText}>ONLINE</span>] [LOCATION: NJIT]
-        </span>
         
         {/* Entire title now uses the pink utility class */}
-        <h2 className={`${styles.mainTitle} ${styles.pinkText}`}>
+        <h2 className={`${styles.mainTitle}`}>
           Establish Connection
         </h2>
         
         {/* Description updated to the yellow accent */}
-        <p className={`${styles.description} ${styles.yellowText}`}>
+        <p className={`${styles.description}`}>
           Looking for fellow NJIT developers, designers, or creators. <br />
           Whether it's a game jam, a system architecture deep-dive, or 
-          a Bauhaus-inspired project—let's build the next level together.
+          an experimental creative-tech collaboration—let's build the next level together.
         </p>
 
         <div className={styles.buttonWrapper}>
           <motion.button 
             className={styles.pixelButton}
-            onClick={() => window.location.href = 'mailto:your-email@njit.edu'}
+            onClick={() => window.location.href = 'mailto:apr45@njit.edu'}
           >
             INITIATE_CHAT.EXE
           </motion.button>

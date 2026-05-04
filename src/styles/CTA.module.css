@@ -22,9 +22,6 @@
   animation: 
     float 6s ease-in-out infinite,
     borderCycle 8s linear infinite; /* Adjust duration for speed */
-  
-  /* Initial shadow state */
-  box-shadow: 12px 12px 0px var(--accent-pink); 
 }
 
 /* 
@@ -35,11 +32,9 @@
 @keyframes borderCycle {
   0%, 100% {
     border-color: var(--accent-yellow);
-    box-shadow: 12px 12px 0px var(--accent-pink);
   }
   50% {
     border-color: var(--accent-pink);
-    box-shadow: 12px 12px 0px var(--accent-yellow);
   }
 }
 
@@ -78,15 +73,6 @@
   color: var(--accent-yellow);
 }
 
-.statusHeader {
-  color: #fff; /* White base for contrast */
-  font-size: 0.8rem;
-  margin-bottom: 2rem;
-  display: block;
-  letter-spacing: 3px;
-  font-family: var(--font-pixel);
-}
-
 @keyframes pulse {
   0% { opacity: 1; }
   50% { opacity: 0.5; }
@@ -99,7 +85,7 @@
   text-transform: uppercase;
   letter-spacing: -1px;
   font-family: var(--font-pixel);
-  /* color will be handled by the .pinkText utility in TSX */
+  color: white;
 }
 
 .description {
@@ -107,7 +93,7 @@
   margin: 0 auto 3rem auto;
   font-size: 1.1rem;
   max-width: 600px;
-  /* color now defaults to yellow via .yellowText utility */
+  color: #ccc;
 }
 
 /* The Interactive Arcade Button */
