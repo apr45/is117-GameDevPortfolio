@@ -40,3 +40,5 @@ const CTA: React.FC = () => {
     </footer>
   );
 };
+
+export default CTA;
