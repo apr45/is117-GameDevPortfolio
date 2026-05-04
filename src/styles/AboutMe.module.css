@@ -242,13 +242,3 @@
   font-size: 0.75rem;
   color: #fff;
 }
-
-.blinkingCursor {
-  animation: blink 1s step-end infinite;
-  color: var(--accent-pink);
-}
-
-@keyframes blink {
-  from, to { opacity: 1; }
-  50% { opacity: 0; }
-}
