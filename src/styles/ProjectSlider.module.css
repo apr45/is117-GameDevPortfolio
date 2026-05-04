@@ -82,11 +82,10 @@
 }
 
 /* 1. ELEMENTS HIDDEN BY DEFAULT */
-.projectDesc,
-.imageSide {
+.projectDesc {
   opacity: 0;
-  max-height: 0; /* Keep it from taking space initially */
-  transform: translateY(10px); 
+  max-height: 0;
+  transform: translateY(10px);
   transition: 
     opacity 0.5s ease 0.2s, 
     transform 0.5s ease 0.2s,
@@ -130,16 +129,22 @@
   transition: padding 0.6s cubic-bezier(0.4, 0, 0.2, 1), justify-content 0.6s ease;
 }
 
-.projectCard:hover .contentSide {
-  align-items: flex-start; /* Shifts to left on hover */
-  justify-content: space-between;
+.projectCard:hover .projectDesc {
+  opacity: 1;
+  max-height: 220px; 
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .imageSide {
-  width: 40%; /* Fixed width for the image area[cite: 9] */
+  opacity: 0;
+  width: 40%; 
+  height: 100%; /* Force full height of the parent projectCard */
   position: relative;
   border-left: 2px solid rgba(255, 255, 255, 0.2);
   background: #000;
+  transition: opacity 0.5s ease 0.2s; /* Simplified transition */
+  pointer-events: none;
 }
 
 .imageLabel {
@@ -156,7 +161,7 @@
 .cardImage {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Prevents distortion */
   filter: grayscale(100%);
   transition: filter 0.3s ease;
 }

@@ -81,7 +81,7 @@ const AboutMe: React.FC = () => {
         {/* BOX 4: GAME DEV GOALS */}
         <div className={styles.statCard}>
           <span className={styles.itemHeader}>[MISSION: SOFTWARE CAREER]</span>
-          <span className={styles.statValue}>GAME_DEV</span>
+          <span className={styles.statValue}>GAME DEV</span>
           <p className={styles.statLabel}>
             Aspires to work as programmer and designer within a professional studio environment before transitioning to build indie titles as a solo  developer or with a small, specialized team.
           </p>
