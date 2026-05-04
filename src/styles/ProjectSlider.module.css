@@ -82,7 +82,6 @@
 
 /* 1. ELEMENTS HIDDEN BY DEFAULT */
 .projectDesc,
-.techStack,
 .imageSide {
   opacity: 0;
   max-height: 0; /* Keep it from taking space initially */
@@ -97,7 +96,6 @@
 
 /* 2. THE HOVER TRIGGER: Reveal everything when card is hovered */
 .projectCard:hover .projectDesc,
-.projectCard:hover .techStack,
 .projectCard:hover .imageSide {
   opacity: 1;
   max-height: 210px; /* Large enough to fit content */
@@ -115,12 +113,6 @@
 
 .projectCard:hover .cardHeader {
   justify-content: flex-start; /* Shift header to left */
-}
-
-.techStack {
-  font-size: 1.1rem;
-  color: var(--accent-pink);
-  letter-spacing: 1px;
 }
 
 .contentSide {

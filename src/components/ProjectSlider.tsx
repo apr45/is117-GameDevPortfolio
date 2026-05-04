@@ -28,7 +28,7 @@ const ProjectSlider: React.FC = () => {
             </div>
             <div className={styles.imageSide}>
               <div className={styles.crtOverlay} />
-              <span className={styles.imageLabel}>Physics Engine</span>
+              <span className={styles.imageLabel}>Royal Guardstown</span>
               <img src="/physics-preview.jpg" alt="Physics" className={styles.cardImage} />
             </div>
           </div>
@@ -38,18 +38,21 @@ const ProjectSlider: React.FC = () => {
             <div className={styles.contentSide}>
               <div className={styles.cardHeader}>
                 <div className={styles.headerMain}>
-                  <h3 className={styles.pillarTitle} style={{ color: 'var(--accent-pink)' }}>[ITEM: Java Mafia]</h3>
-                  <span className={styles.statusLabel}>STATUS: COMPLETE</span>
+                  <h3 className={styles.pillarTitle}>[CLIENT-SERVER: MAFIA PARTY]</h3>
+                  <span className={styles.statusLabel}>STATUS: ONGOING</span>
                 </div>
               </div>
               <p className={styles.projectDesc}>
-                Multi-threaded networking architecture for real-time role-assignment and game logic.
+                Engineered a multi-threaded networking architecture in Java to 
+                facilitate real-time communication between a central server 
+                and concurrent clients. Implemented a complex state machine to 
+                manage synchronized "Night/Day" game cycles, secure data persistence, and 
+                automated moderator logic for error-tolerant session hosting.
               </p>
-              <div className={styles.techStack}>#JAVA #NETWORKING #THREADS</div>
             </div>
             <div className={styles.imageSide}>
               <div className={styles.crtOverlay} />
-              <span className={styles.imageLabel}>Java Mafia</span>
+              <span className={styles.imageLabel}>Mafia Party</span>
               <img src="/mafia-preview.jpg" alt="Mafia" className={styles.cardImage} />
             </div>
           </div>
@@ -67,13 +70,13 @@ const ProjectSlider: React.FC = () => {
                 Architected a digital reconstruction of Oskar Schlemmer's "Triadic Ballet," 
                 translating the experimental trinity-based performance into a 
                 minimalist, functional interface. This exhibition leverages 
-                Bauhaus-era geometric aesthetics to offer an interactive exploration 
-                of Schlemmer's legacy through avant-garde digital components.
+                Bauhaus-era aesthetics to offer an interactive exploration 
+                of Schlemmer's legacy through avant-garde components.
               </p>
             </div>
             <div className={styles.imageSide}>
               <div className={styles.crtOverlay} />
-              <span className={styles.imageLabel}>Bauhaus Digital</span>
+              <span className={styles.imageLabel}>Triadic Ballet</span>
               <img src="/bauhaus-preview.jpg" alt="Bauhaus" className={styles.cardImage} />
             </div>
           </div>
