@@ -81,21 +81,21 @@
 }
 
 .titleWrapper {
-  background: var(--accent-pink); /* Or use var(--accent-yellow) for a swap */
-  padding: 2rem 1rem;
+  background: var(--accent-pink);
+  padding: 2.5rem 0;
   width: 100%;
-  margin-bottom: 3rem;
-  /* Syncs with the global color cycle */
+  margin: 0; /* Reset margin so it aligns flush with top/sides */
   animation: barColorCycle 8s linear infinite;
 }
 
 .mainTitle {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: 0;
   text-transform: uppercase;
   font-family: var(--font-pixel);
-  color: #000; /* Dark text on the vibrant bar for maximum contrast */
   letter-spacing: 2px;
+  /* Syncs text color with the button's logic */
+  animation: titleColorCycle 8s linear infinite;
 }
 
 .description {
@@ -105,6 +105,15 @@
   max-width: 600px;
   color: #ccc;
   padding: 0 3rem; /* Re-apply horizontal padding for the text body */
+}
+
+@keyframes titleColorCycle {
+  0%, 100% {
+    color: #fff; /* White text on Pink background */
+  }
+  50% {
+    color: #000; /* Black text on Yellow background */
+  }
 }
 
 @keyframes barColorCycle {
