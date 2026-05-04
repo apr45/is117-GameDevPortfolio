@@ -28,7 +28,6 @@ const ProjectSlider: React.FC = () => {
             </div>
             <div className={styles.imageSide}>
               <div className={styles.crtOverlay} />
-              <span className={styles.imageLabel}>Royal Guardstown</span>
               <img src="./images/Royal-Guardstown.png" alt="Royal-Guardstown" className={styles.cardImage} />
             </div>
           </div>
@@ -52,7 +51,6 @@ const ProjectSlider: React.FC = () => {
             </div>
             <div className={styles.imageSide}>
               <div className={styles.crtOverlay} />
-              <span className={styles.imageLabel}>Mafia Party</span>
               <img src="./images/Mafia-Party.png" alt="Mafia-Party" className={styles.cardImage} />
             </div>
           </div>
@@ -84,7 +82,6 @@ const ProjectSlider: React.FC = () => {
             </div>
             <div className={styles.imageSide}>
               <div className={styles.crtOverlay} />
-              <span className={styles.imageLabel}>Triadic Ballet</span>
               <img src="./images/Triadic-Ballet.png" alt="Triadic-Ballet" className={styles.cardImage} />
             </div>
           </div>
