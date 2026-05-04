@@ -113,7 +113,7 @@
 }
 
 .pixelButton {
-  background: var(--accent-pink);
+  background: var(--accent-pink); /* Initial state */
   color: white;
   border: none;
   padding: 1.2rem 2.5rem;
@@ -121,18 +121,32 @@
   font-size: 1.2rem;
   cursor: pointer;
   position: relative;
-  /* Darker pink for the 3D button edge */
-  box-shadow: 0 6px 0 #800033, 0 10px 20px rgba(0,0,0,0.5);
-  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 5;
+  
+  /* Applying the cycle animation */
+  animation: buttonColorCycle 8s linear infinite;
+  
+  /* Smooth transition for hover states */
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+@keyframes buttonColorCycle {
+  0%, 100% {
+    background-color: var(--accent-pink);
+    box-shadow: 0 6px 0 #800033; /* Darker Pink depth */
+    color: white;
+  }
+  50% {
+    background-color: var(--accent-yellow);
+    box-shadow: 0 6px 0 #b7950b; /* Darker Yellow depth */
+    color: #000; /* Switch text color for readability on yellow */
+  }
 }
 
 .pixelButton:active {
   transform: translateY(4px);
-  box-shadow: 0 2px 0 #800033;
 }
 
 .pixelButton:hover {
-  background: var(--accent-yellow);
-  color: #000;
-  box-shadow: 0 6px 0 #b7950b;
+  filter: brightness(1.2);
 }
