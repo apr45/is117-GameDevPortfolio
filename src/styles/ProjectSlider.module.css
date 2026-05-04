@@ -137,31 +137,21 @@
 }
 
 .imageSide {
-  width: 40%;
+  opacity: 0;
+  width: 40%; 
+  height: 100%; /* Force full height of the parent projectCard */
   position: relative;
   background: #000;
-  
-  /* ADDING FLEXBOX FOR VERTICAL CENTERING[cite: 3] */
-  display: flex;
-  align-items: center; /* Vertically center the cardImage[cite: 3] */
-  justify-content: center; /* Horizontally center the cardImage[cite: 3] */
-  
-  /* Ensure the container takes full height of the parent projectCard[cite: 3] */
-  height: 100%; 
-
-  /* Keep the previous animation logic[cite: 3] */
-  transition: opacity 0.5s ease 0.2s;
+  transition: opacity 0.5s ease 0.2s; /* Simplified transition */
   pointer-events: none;
+  margin-top: 15%;
 }
 
+
 .cardImage {
-  /* Updated properties to maintain aspect ratio and center[cite: 3] */
-  width: auto; /* Use width based on original image size[cite: 3] */
-  max-width: 90%; /* Prevent overflowing horizontally, with padding[cite: 3] */
-  height: auto; /* Use height based on original image size[cite: 3] */
-  max-height: 90%; /* Prevent overflowing vertically, with padding[cite: 3] */
-  object-fit: contain; /* Maintain aspect ratio and center the image in its frame[cite: 3] */
-  
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Prevents distortion */
   filter: grayscale(100%);
   transition: filter 0.3s ease;
 }
