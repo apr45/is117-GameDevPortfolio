@@ -113,33 +113,34 @@
 }
 
 .pixelButton {
-  background: var(--accent-pink); /* Initial state */
+  background: var(--accent-pink);
   color: white;
   border: none;
   padding: 1.2rem 2.5rem;
   font-family: var(--font-pixel);
   font-size: 1.2rem;
+  font-weight: bold; /* Bolded for better readability */
   cursor: pointer;
   position: relative;
   z-index: 5;
   
-  /* Applying the cycle animation */
+  /* Existing color cycle */
   animation: buttonColorCycle 8s linear infinite;
   
-  /* Smooth transition for hover states */
-  transition: transform 0.2s ease, filter 0.2s ease;
+  /* Smooth transitions for non-animated properties */
+  transition: transform 0.1s ease;
 }
 
 @keyframes buttonColorCycle {
   0%, 100% {
     background-color: var(--accent-pink);
-    box-shadow: 0 6px 0 #800033; /* Darker Pink depth */
+    box-shadow: 0 6px 0 #800033;
     color: white;
   }
   50% {
     background-color: var(--accent-yellow);
-    box-shadow: 0 6px 0 #b7950b; /* Darker Yellow depth */
-    color: #000; /* Switch text color for readability on yellow */
+    box-shadow: 0 6px 0 #b7950b;
+    color: #000; /* High contrast for bold text on yellow[cite: 3] */
   }
 }
 
@@ -148,5 +149,17 @@
 }
 
 .pixelButton:hover {
-  filter: brightness(1.2);
+  animation: 
+    buttonColorCycle 8s linear infinite, /* Keep the color cycle going[cite: 3] */
+    buttonHoverGlitch 0.2s ease-in-out infinite; /* Add the hover jitter */
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+@keyframes buttonHoverGlitch {
+  0% { transform: translate(0, 0) scale(1.05); }
+  25% { transform: translate(2px, -1px) scale(1.05); }
+  50% { transform: translate(-1px, 1px) scale(1.05); }
+  75% { transform: translate(1px, -1px) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1.05); }
 }
