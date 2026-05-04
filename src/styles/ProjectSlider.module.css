@@ -17,7 +17,7 @@
   font-family: var(--font-pixel);
   color: var(--text-main);
   text-align: left;
-  margin-bottom: -5%;
+  margin-bottom: -1%;
 }
 
 .scrollContainer {
@@ -190,8 +190,11 @@
 }
 
 .statusLink {
-  text-decoration: underline; /* Add persistent underline */
-  text-underline-offset: 4px; /* Better spacing for pixel fonts */
+  /* Text decoration settings */
+  text-decoration: underline;
+  text-decoration-color: var(--accent-pink); /* Specifically sets underline to pink */
+  text-underline-offset: 4px; 
+  
   display: inline-block;
   transition: all 0.3s ease;
 }

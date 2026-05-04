@@ -70,7 +70,7 @@ const ProjectSlider: React.FC = () => {
           rel="noopener noreferrer"
           className={styles.statusLink}
         >
-          <span className={styles.statusLabel}>STATUS: VIEW_LIVE_SITE</span>
+          <span className={styles.statusLabel}>STATUS: COMPLETED</span>
         </a>
       </div>
     </div>

@@ -11,7 +11,7 @@ const AboutMe: React.FC = () => {
           <span className={styles.itemHeader}>[EDUCATION: NJIT]</span>
           <span className={styles.statValue}>IT MAJOR</span>
           <p className={styles.statLabel}>
-            Specializing in Game Development. Crafting the technical bridge between systems and player experience.
+            Sophomere specializing in Game Development with good-standing in all courses.
           </p>
         </div>
 
@@ -57,33 +57,35 @@ const AboutMe: React.FC = () => {
 
 {/* BOX 3: CREATIVE PATH (Wide - Bottom Left) */}
 <div className={`${styles.statCard} ${styles.wideItem}`}>
-  <span className={styles.itemHeader}>[PATH: WORLD_BUILDING]</span>
+  <span className={styles.itemHeader}>[INTEREST: DIGITAL DESIGN]</span>
   
   <div className={styles.modelGridHobbies}>
-    {/* HOBBY 1: SCULPTING */}
+    {/* HOBBY 1: 3D MODELING */}
     <div className={styles.pillarCard}>
-      <h3 className={styles.pillarTitle}>1. SCULPTING</h3>
+      <h3 className={styles.pillarTitle}>1. 3D MODELING</h3>
       <p className={styles.pillarText}>
-        Physical and digital modeling to create tangible assets for gameplay immersion.
+        Utilizing Blender to engineer high-fidelity digital sculptures, focusing on the production of optimized character and environmental assets for seamless integration into real-time game engines.
       </p>
     </div>
 
-    {/* HOBBY 2: GRAPHIC DESIGN */}
+    {/* HOBBY 2: GRAPHIC ILLUSTRATION */}
     <div className={styles.pillarCard}>
-      <h3 className={styles.pillarTitle}>2. DESIGN</h3>
+      <h3 className={styles.pillarTitle}>2. GRAPHIC ILLUSTRATION</h3>
       <p className={styles.pillarText}>
-        Focusing on minimalist and geometric aesthetics inspired by the Bauhaus movement.
+        Leveraging Adobe Photoshop to architect cohesive visual languages, spanning from high-level conceptual drafts to functional user interface (UI) components for game applications.
       </p>
     </div>
   </div>
 </div>
 
-        {/* BOX 4: WEB DEV GOALS (Narrow - Bottom Right) */}
+        {/* BOX 4: GAME DEV GOALS */}
         <div className={styles.statCard}>
-          <span className={styles.itemHeader}>[MISSION: WEB_EXPANSION]</span>
-          <span className={styles.statValue}>WEB_DEV</span>
+          <span className={styles.itemHeader}>[MISSION: SOFTWARE CAREER]</span>
+          <h3 className={styles.statValue}>
+            GAME_DEV<span className={styles.blinkingCursor}>_</span>
+          </h3>
           <p className={styles.statLabel}>
-            Evolving interactive mechanics into modern, full-stack web ecosystems.
+            Aspires to work as programmer and designer within a professional studio environment before transitioning to build indie titles as a solo  developer or with a small, specialized team.
           </p>
         </div>
 
