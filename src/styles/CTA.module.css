@@ -12,16 +12,15 @@
   width: 90%;
   max-width: 800px;
   background: #111;
-  /* Start with an initial border color */
-  border: 4px solid var(--accent-yellow); 
-  padding: 4rem 3rem;
+  border: 4px solid var(--accent-yellow);
+  /* Keep vertical padding, but set horizontal to 0 for the bar effect */
+  padding: 0; 
   position: relative;
   text-align: center;
-  
-  /* Apply both the float and the new border cycle animation */
+  overflow: hidden; /* Ensures the bar doesn't bleed out of rounded corners */
   animation: 
     float 6s ease-in-out infinite,
-    borderCycle 8s linear infinite; /* Adjust duration for speed */
+    borderCycle 8s linear infinite;
 }
 
 /* 
@@ -79,13 +78,23 @@
   100% { opacity: 1; }
 }
 
+.titleWrapper {
+  background: var(--accent-pink); /* Or use var(--accent-yellow) for a swap */
+  padding: 2rem 1rem;
+  width: 100%;
+  margin-bottom: 3rem;
+  border-bottom: 4px solid #fff;
+  /* Syncs with the global color cycle */
+  animation: barColorCycle 8s linear infinite;
+}
+
 .mainTitle {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  margin: 0;
   text-transform: uppercase;
-  letter-spacing: -1px;
   font-family: var(--font-pixel);
-  color: white;
+  color: #000; /* Dark text on the vibrant bar for maximum contrast */
+  letter-spacing: 2px;
 }
 
 .description {
@@ -94,6 +103,16 @@
   font-size: 1.1rem;
   max-width: 600px;
   color: #ccc;
+  padding: 0 3rem; /* Re-apply horizontal padding for the text body */
+}
+
+@keyframes barColorCycle {
+  0%, 100% {
+    background-color: var(--accent-pink);
+  }
+  50% {
+    background-color: var(--accent-yellow);
+  }
 }
 
 /* The Interactive Arcade Button */

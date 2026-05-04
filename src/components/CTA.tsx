@@ -7,31 +7,34 @@ const CTA: React.FC = () => {
   return (
     <footer id="contact" className={styles.ctaContainer}>
       <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         className={styles.terminalBox}
       >
+        {/* The New Bar Structure */}
+        <div className={styles.titleWrapper}>
+          <h2 className={styles.mainTitle}>
+            Establish Connection
+          </h2>
+        </div>
         
-        {/* Entire title now uses the pink utility class */}
-        <h2 className={`${styles.mainTitle}`}>
-          Establish Connection
-        </h2>
-        
-        {/* Description updated to the yellow accent */}
-        <p className={`${styles.description}`}>
-          Looking for fellow NJIT developers, designers, or creators. <br />
-          Whether it's a game jam, a system architecture deep-dive, or 
-          an experimental creative-tech collaboration—let's build the next level together.
-        </p>
+        {/* Body content remains padded below the bar */}
+        <div className={styles.bodyContent}>
+           <p className={styles.description}>
+            Looking for fellow NJIT developers, designers, or creators. <br />
+            Whether it's a game jam, a system architecture deep-dive, or 
+            an experimental creative-tech collaboration—let's build the next level together.
+          </p>
 
-        <div className={styles.buttonWrapper}>
-          <motion.button 
-            className={styles.pixelButton}
-            onClick={() => window.location.href = 'mailto:apr45@njit.edu'}
-          >
-            INITIATE_CHAT.EXE
-          </motion.button>
+          <div className={styles.buttonWrapper}>
+            <motion.button 
+              className={styles.pixelButton}
+              onClick={() => window.location.href = 'mailto:apr45@njit.edu'}
+            >
+              INITIATE_CHAT.EXE
+            </motion.button>
+          </div>
         </div>
       </motion.div>
     </footer>
