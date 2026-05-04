@@ -14,8 +14,8 @@ const ProjectSlider: React.FC = () => {
             <div className={styles.contentSide}>
               <div className={styles.cardHeader}>
                 <div className={styles.headerMain}>
-                  <h3 className={styles.pillarTitle}>[TEAM PROJECT: Royal Guardstown]</h3>
-                  <span className={styles.statusLabel}>STATUS: Ongoing</span>
+                  <h3 className={styles.pillarTitle}>[TEAM PROJECT: ROYAL GUARDSTOWN]</h3>
+                  <span className={styles.statusLabel}>STATUS: ONGOING</span>
                 </div>
               </div>
               <p className={styles.projectDesc}>
@@ -25,7 +25,6 @@ const ProjectSlider: React.FC = () => {
                 framework, execute strategic level design, and produce high-fidelity 
                 custom iconography.
               </p>
-              <div className={styles.techStack}>#UNITY #C# #LEVEL_DESIGN #UI_UX</div>
             </div>
             <div className={styles.imageSide}>
               <div className={styles.crtOverlay} />
@@ -60,14 +59,17 @@ const ProjectSlider: React.FC = () => {
             <div className={styles.contentSide}>
               <div className={styles.cardHeader}>
                 <div className={styles.headerMain}>
-                  <h3 className={styles.pillarTitle}>[ITEM: BAUHAUS_DIGITAL]</h3>
-                  <span className={styles.statusLabel}>STATUS: ONGOING</span>
+                  <h3 className={styles.pillarTitle}>[MUSEUM EXHIBIT: TRIADIC BALLET]</h3>
+                  <span className={styles.statusLabel}>STATUS: COMPLETE</span>
                 </div>
               </div>
               <p className={styles.projectDesc}>
-                Digital reconstruction of Schlemmer's Triadic Ballet using minimalist geometric design.
+                Architected a digital reconstruction of Oskar Schlemmer's "Triadic Ballet," 
+                translating the experimental trinity-based performance into a 
+                minimalist, functional interface. This exhibition leverages 
+                Bauhaus-era geometric aesthetics to offer an interactive exploration 
+                of Schlemmer's legacy through avant-garde digital components.
               </p>
-              <div className={styles.techStack}>#WEB #DESIGN #BAUHAUS</div>
             </div>
             <div className={styles.imageSide}>
               <div className={styles.crtOverlay} />

@@ -100,7 +100,7 @@
 .projectCard:hover .techStack,
 .projectCard:hover .imageSide {
   opacity: 1;
-  max-height: 200px; /* Large enough to fit content */
+  max-height: 210px; /* Large enough to fit content */
   transform: translateY(0);
   pointer-events: auto;
 }
@@ -108,7 +108,7 @@
 .cardHeader {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2.0rem;
   width: 100%;
   justify-content: center; /* Initial center alignment */
 }
