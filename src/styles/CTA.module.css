@@ -8,19 +8,21 @@
   z-index: 10;
 }
 
+
 .terminalBox {
   width: 90%;
   max-width: 800px;
   background: #111;
-  border: 4px solid var(--accent-yellow);
-  /* Keep vertical padding, but set horizontal to 0 for the bar effect */
-  padding: 0; 
+  /* Start with an initial border color */
+  border: 4px solid var(--accent-yellow); 
+  padding: 4rem 3rem;
   position: relative;
   text-align: center;
-  overflow: hidden; /* Ensures the bar doesn't bleed out of rounded corners */
+  
+  /* Apply both the float and the new border cycle animation */
   animation: 
     float 6s ease-in-out infinite,
-    borderCycle 8s linear infinite;
+    borderCycle 8s linear infinite; /* Adjust duration for speed */
 }
 
 /* 
@@ -83,7 +85,6 @@
   padding: 2rem 1rem;
   width: 100%;
   margin-bottom: 3rem;
-  border-bottom: 4px solid #fff;
   /* Syncs with the global color cycle */
   animation: barColorCycle 8s linear infinite;
 }
