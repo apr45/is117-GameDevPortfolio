@@ -17,6 +17,7 @@
   font-family: var(--font-pixel);
   color: var(--text-main);
   text-align: left;
+  margin-bottom: -5%;
 }
 
 .scrollContainer {
@@ -98,7 +99,7 @@
 .projectCard:hover .projectDesc,
 .projectCard:hover .imageSide {
   opacity: 1;
-  max-height: 215px; /* Large enough to fit content */
+  max-height: 220px; /* Large enough to fit content */
   transform: translateY(0);
   pointer-events: auto;
 }
@@ -189,14 +190,16 @@
 }
 
 .statusLink {
-  text-decoration: none; /* Removes default underline */
+  text-decoration: underline; /* Add persistent underline */
+  text-underline-offset: 4px; /* Better spacing for pixel fonts */
   display: inline-block;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .statusLink:hover {
-  opacity: 0.8;
-  filter: brightness(1.2); /* Makes the pink pop on hover[cite: 5] */
+  /* Significantly increased brightness to make the pink glow */
+  filter: brightness(1.8) drop-shadow(0 0 5px var(--accent-pink)); 
+  transform: translateY(-1px);
 }
 
 .statusLabel {
