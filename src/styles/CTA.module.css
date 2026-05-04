@@ -11,14 +11,36 @@
 .terminalBox {
   width: 90%;
   max-width: 800px;
-  background: #111; /* Matched to previous project card grey */
-  border: 4px solid var(--accent-yellow); /* Main white border as seen in project cards */
+  background: #111;
+  /* Start with an initial border color */
+  border: 4px solid var(--accent-yellow); 
   padding: 4rem 3rem;
   position: relative;
   text-align: center;
   
-  /* Reset floating to focus on the static pixel design */
-  transform: none;
+  /* Apply both the float and the new border cycle animation */
+  animation: 
+    float 6s ease-in-out infinite,
+    borderCycle 8s linear infinite; /* Adjust duration for speed */
+  
+  /* Initial shadow state */
+  box-shadow: 12px 12px 0px var(--accent-pink); 
+}
+
+/* 
+   NEW ANIMATION:
+   Smoothly cycles the border and the hard-pixel shadow 
+   between the two primary Bauhaus accent colors.
+*/
+@keyframes borderCycle {
+  0%, 100% {
+    border-color: var(--accent-yellow);
+    box-shadow: 12px 12px 0px var(--accent-pink);
+  }
+  50% {
+    border-color: var(--accent-pink);
+    box-shadow: 12px 12px 0px var(--accent-yellow);
+  }
 }
 
 /* CRT Scanline Overlay with intensified flicker */
@@ -42,11 +64,10 @@
   z-index: 2;
 }
 
-/* Floating animation keyframes */
+/* Ensure the floating keyframes remain */
 @keyframes float {
-  0% { transform: translateY(0px); }
+  0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
 }
 
 .pinkText {
